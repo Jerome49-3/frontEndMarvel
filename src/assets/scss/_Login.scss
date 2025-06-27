@@ -1,0 +1,20 @@
+.boxLogin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('../images/marvel-background-web.webp');
+  padding: 10%;
+  border-radius: 15px;
+  @include flexCenter;
+
+  form {
+    @include flexColCenter;
+    gap: 10px;
+
+    input[type="submit"] {
+      width: 60%;
+      padding: 5px 10px 5px 10px;
+    }
+  }
+}

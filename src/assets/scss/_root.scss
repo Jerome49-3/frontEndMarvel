@@ -1,0 +1,58 @@
+body {
+  height: 100vh;
+  background-color: $darkMode;
+}
+
+.wrapper {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main .wrapper {
+  background-image: url('../images/marvel-background-web.webp');
+  background-size: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+* a {
+  color: $fontTxt;
+  text-decoration: none;
+}
+
+input {
+  background-color: $bannerBlack;
+  border-radius: 15px;
+  border-color: none;
+  color: $fontTxt;
+  padding: 5px 0 5px 10px;
+}
+
+input::placeholder {
+  color: $fontTxt;
+}
+
+input:focus-visible::placeholder {
+  opacity: 0;
+}
+
+details summary::-webkit-details-marker,
+details summary::marker {
+  display: none;
+  content: "";
+}
+
+details[open] summary {
+  width: 40px;
+}
+
+details label {
+  @include flexCenter;
+  width: 55px;
+}
+
+details input {
+  width: 38px;
+  padding: 5px 10px 5px 10px;
+}

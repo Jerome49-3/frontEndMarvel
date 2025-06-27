@@ -1,0 +1,448 @@
+body {
+  height: 100vh;
+  background-color: #202020;
+}
+
+.wrapper {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main .wrapper {
+  background-image: url("../images/marvel-background-web.webp");
+  background-size: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+* a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+input {
+  background-color: #151515;
+  border-radius: 15px;
+  border-color: none;
+  color: #FFFFFF;
+  padding: 5px 0 5px 10px;
+}
+
+input::-moz-placeholder {
+  color: #FFFFFF;
+}
+
+input::placeholder {
+  color: #FFFFFF;
+}
+
+input:focus-visible::-moz-placeholder {
+  opacity: 0;
+}
+
+input:focus-visible::placeholder {
+  opacity: 0;
+}
+
+details summary::-webkit-details-marker,
+details summary::marker {
+  display: none;
+  content: "";
+}
+
+details[open] summary {
+  width: 40px;
+}
+
+details label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+}
+
+details input {
+  width: 38px;
+  padding: 5px 10px 5px 10px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #202020;
+  color: #FFFFFF;
+  height: 80px;
+  padding: 20px;
+}
+header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+header .wrapper img {
+  width: 200px;
+  border-radius: 5px;
+}
+header .wrapper .boxInput {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 30%;
+  gap: 10px;
+  height: 80px;
+}
+header .wrapper .boxInput details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 30px;
+}
+header .wrapper nav {
+  padding-right: 10px;
+}
+header .wrapper nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+header .wrapper nav ul li:first-child {
+  display: flex;
+  gap: 10px;
+}
+
+/* MODAL */
+.boxModal {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/marvel-background-web.webp");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.boxModalContent {
+  background-color: white;
+  padding: 1rem 2rem 2rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 15px;
+  box-shadow: inset 0px 0px 10px #000000, 0px 0px 10px #000000;
+  min-width: 30%;
+  max-width: 90%;
+  gap: 20px;
+}
+
+.boxModalContent div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.boxModalContent div:first-child {
+  width: 110%;
+}
+
+.boxModalContent div img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.boxModalContent button {
+  text-shadow: 1px 1px 2px white, 1.25px 1.25px 2.25px #000000;
+  background-color: rgba(241, 241, 241, 0.9450980392);
+}
+
+.boxModalContent div img,
+.boxModalContent button {
+  width: 150px;
+  height: 50px;
+  padding: 5px;
+  border-radius: 7.5px;
+  box-shadow: 0px 0px 4px #000000;
+}
+
+.boxModalContent button {
+  width: 40px;
+}
+
+.boxModalContent button:hover {
+  box-shadow: inset 0px 0px 4px #000000;
+}
+
+.boxModalContent form {
+  gap: 5px;
+  padding: 1.5rem 2rem 2rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 43%;
+}
+
+input[type=submit] {
+  width: 50%;
+  padding: 5px 10px 5px 10px;
+}
+
+.hide {
+  display: none;
+}
+
+.boxLogin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("../images/marvel-background-web.webp");
+  padding: 10%;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boxLogin form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.boxLogin form input[type=submit] {
+  width: 60%;
+  padding: 5px 10px 5px 10px;
+}
+
+main {
+  background-color: #202020;
+  color: #FFFFFF;
+}
+main .boxArticles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 2px solid #E62429;
+  gap: 4%;
+  padding: 15px;
+}
+main .boxArticles .boxCardFav {
+  width: 25%;
+}
+main .boxArticles .boxCardFav a {
+  border: 2px solid #E62429;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 300px;
+  border-radius: 15px;
+  gap: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.75s linear;
+  transform-style: preserve-3d;
+  margin-bottom: 5px;
+}
+main .boxArticles .boxCardFav a .back {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid purple;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+main .boxArticles .boxCardFav a .front {
+  width: 100%;
+  height: 100%;
+  z-index: 800;
+  position: absolute;
+  z-index: 0;
+  backface-visibility: hidden;
+}
+main .boxArticles .boxCardFav a .front:hover {
+  transform: rotateY(180deg);
+}
+main .boxArticles .boxCardFav a .front img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+}
+main .boxArticles .boxCardFav button {
+  width: 100%;
+  border-radius: 15px;
+  background: rgb(32, 32, 32);
+  background: linear-gradient(90deg, rgb(32, 32, 32) 15%, rgb(230, 36, 41) 100%);
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px #151515, 1.25px 1.25px 2.25px #151515;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+main .boxArticles .boxCardFav button:not(article:last-child) {
+  margin-bottom: 15px;
+}
+
+.boxCard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 25vw;
+  gap: 10px;
+  padding: 10px;
+  border: 2px solid red;
+  padding: 20px;
+  border-radius: 15px;
+}
+.card img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.card h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.card p {
+  overflow: hidden;
+  text-align: justify;
+  height: 98px;
+}
+
+.boxComics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 80px;
+  padding: 20px;
+}
+.boxComics a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 25%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px;
+  gap: 20px;
+  border: 2px solid #E62429;
+  border-radius: 15px;
+}
+.boxComics a img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px;
+}
+
+.linkComicsChar {
+  border: 2px solid #E62429;
+  padding: 5px 10px 5px 10px;
+  box-shadow: 0.25px 0.25px 1px #151515, 1px 1px 1.25px #FFFFFF, 0.75px 0.75px 1.5px #151515;
+  border-radius: 15px;
+}
+
+.boxComicsChar {
+  border: 2px solid red;
+  gap: 20px;
+  padding: 10px;
+  height: 75vh;
+}
+.boxComicsChar .boxSlide {
+  border: 2px solid green;
+  overflow: hidden;
+  overflow-x: scroll;
+  margin-top: 6rem;
+}
+.boxComicsChar .boxSlide .slide {
+  border: 2px solid purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  padding: 10px;
+  width: 100%;
+}
+.boxComicsChar .boxSlide .slide article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid blue;
+  min-width: 33.3333333333%;
+  height: 400px;
+  gap: 20px;
+  border: 2px solid #E62429;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.boxComicsChar .boxSlide .slide article img {
+  width: 100%;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.boxComicsChar .boxSlide .slide article p {
+  text-align: justify;
+  height: 95px;
+  margin-top: -10px;
+  overflow: hidden;
+}
+.boxComicsChar .boxSlide .slide article:first-child {
+  margin-left: 350rem;
+}
+
+.arrLeftTop {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+}
+
+.arrRightTop {
+  position: absolute;
+  top: 15%;
+  left: 95%;
+  transform: translate(-50%, -50%);
+}
+
+.arrLeftTop,
+.arrRightTop {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #E62429;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=App.css.map */
