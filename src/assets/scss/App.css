@@ -67,6 +67,10 @@ details input {
   padding: 5px 10px 5px 10px;
 }
 
+.red {
+  color: red;
+}
+
 header {
   display: flex;
   justify-content: center;

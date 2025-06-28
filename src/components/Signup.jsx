@@ -69,7 +69,7 @@ const SignUp = ({ show, setShow, icon1, icon2, token, setToken }) => {
             type="text"
             placeholder="Username"
             setState={setUsername}
-            autocomplete="on"
+            autoComplete="on"
           />
           <Input
             value={email}
@@ -77,7 +77,7 @@ const SignUp = ({ show, setShow, icon1, icon2, token, setToken }) => {
             type="email"
             placeholder="Email"
             setState={setEmail}
-            autocomplete="on"
+            autoComplete="on"
           />
           <div className="boxPsswd">
             <Input
@@ -86,7 +86,7 @@ const SignUp = ({ show, setShow, icon1, icon2, token, setToken }) => {
               type={type}
               placeholder="Mot de passe"
               setState={setPassword}
-              autocomplete="on"
+              autoComplete="on"
             />
             <div className="boxIcons">
               <FontAwesomeIcon
@@ -103,7 +103,7 @@ const SignUp = ({ show, setShow, icon1, icon2, token, setToken }) => {
           </div>
           <Input type="submit" value="S'inscrire" />
         </form>
-        {errorMessage && <p style={{ color: $redMarv }}>{errorMessage}</p>}
+        {errorMessage && <p className="red">{errorMessage}</p>}
       </div>
     </div>
   );

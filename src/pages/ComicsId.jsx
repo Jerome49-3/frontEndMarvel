@@ -42,10 +42,10 @@ const ComicsId = () => {
         <div className="boxComicsChar">
           <div className="boxSlide">
             <div className="slide">
-              {comics.map((comic, key = index) => {
+              {comics.map((comic, index) => {
                 console.log("comic:", comic);
                 return (
-                  <article key={key}>
+                  <article key={index}>
                     <img
                       src={`${comic.thumbnail.path}/standard_xlarge.${comic.thumbnail.extension}`}
                       alt="comics"

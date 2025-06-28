@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
@@ -22,6 +23,11 @@ const Home = ({
 }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  const formatImg =
+    "standard_amazing" ||
+    "standard_fantastic" ||
+    "standard_xlarge" ||
+    "standard_large";
   // console.log('fav0', fav);
   //initialiser un useEffect pour effectuer une requete au chargement de la page
   useEffect(() => {
@@ -34,14 +40,23 @@ const Home = ({
             import.meta.env.VITE_REACT_APP_URL
           }/appmarv/characters?name=${name}&limit=${limit}&skip=${skip}`
         );
-        // console.log('data Home:', response);
+        console.log("response?.data in Home:", response?.data);
         //si response
         if (response) {
           //mettre a jour la valeur du state data avec le retour de la response.data
-          const data = response.data.dataMarv.data;
-          const counter = response.data.dataMarv.count;
+          const data = response?.data?.dataMarv?.data;
+          console.log("data1:", data);
+          const newData = [...data];
+          console.log("newData:", newData);
+          const filterImg = newData.filter(
+            (card) =>
+              !card.thumbnail.path.includes("image_not_available") &&
+              !card.thumbnail.extension.includes("gif")
+          );
+          console.log("filterImg:", filterImg);
+          const counter = response?.data?.dataMarv?.count;
           // console.log('data1:', data);
-          setData(data);
+          setData(filterImg);
           // console.log('data2:', data);
           setCount(counter);
           console.log("count:", count);
@@ -109,7 +124,7 @@ const Home = ({
                     </div>
                     <div className="front">
                       <img
-                        src={`${card.thumbnail.path}/standard_xlarge.${card.thumbnail.extension}`}
+                        src={`${card.thumbnail.path}/${formatImg}.${card.thumbnail.extension}`}
                         alt="characters"
                       />
                     </div>
