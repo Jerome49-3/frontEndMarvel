@@ -109,6 +109,8 @@ header {
       @include flexAround;
 
       .boxLogo {
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
         width: fit-content;
         @include flexCenter;
 

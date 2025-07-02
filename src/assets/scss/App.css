@@ -167,7 +167,7 @@ details input {
   border: 2px solid #E62429;
   padding: 15px;
   border-radius: 15px;
-  gap: 44px;
+  gap: 20px;
 }
 .BoxCards .boxCardFav {
   width: 100%;
@@ -183,7 +183,6 @@ details input {
   width: 100%;
   height: 300px;
   border-radius: 15px;
-  gap: 10px;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.5s ease-out;
@@ -228,7 +227,7 @@ details input {
   width: 100%;
   height: 300px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 15px;
   box-shadow: 0px 0px 1px purple, 0px 0px 1px purple, 0px 0px 1px purple, 0px 0px 10px purple;
 }
@@ -288,6 +287,7 @@ details input {
 @media all and (min-width: 1200px) {
   .BoxCards {
     justify-content: flex-start;
+    gap: 44px;
   }
 }
 header {
@@ -588,7 +588,7 @@ main {
 .boxComics a img {
   width: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 15px;
 }
 
@@ -637,7 +637,7 @@ main {
   width: 100%;
   height: 250px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
