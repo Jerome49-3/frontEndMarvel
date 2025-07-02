@@ -1,12 +1,37 @@
-body {
+html,
+body,
+main {
+  width: 100vw;
   height: 100vh;
   background-color: #202020;
 }
 
 .wrapper {
-  max-width: 1024px;
+  max-width: 300px;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
+  height: 100%;
+}
+@media all and (min-width: 576px) {
+  .wrapper {
+    max-width: 530px;
+  }
+}
+@media all and (min-width: 768px) {
+  .wrapper {
+    max-width: 730px;
+  }
+}
+@media all and (min-width: 992px) {
+  .wrapper {
+    max-width: 960px;
+  }
+}
+@media all and (min-width: 1200px) {
+  .wrapper {
+    max-width: 1024px;
+  }
 }
 
 main .wrapper {
@@ -24,7 +49,9 @@ main .wrapper {
 input {
   background-color: #151515;
   border-radius: 15px;
-  border-color: none;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.7), 0.25px 0.25px 1px #E62429, 0.5px 0.5px 1px rgba(0, 0, 0, 0.7), 0.75px 0.75px 1px #E62429, 1px 1px 10px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.7), 0.25px 0.25px 1px #E62429, 0.5px 0.5px 1px rgba(0, 0, 0, 0.7), 0.75px 0.75px 1px #E62429, 1px 1px 10px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.7), 0.25px 0.25px 1px #E62429, 0.5px 0.5px 1px rgba(0, 0, 0, 0.7), 0.75px 0.75px 1px #E62429, 1px 1px 10px rgba(0, 0, 0, 0.7);
   color: #FFFFFF;
   padding: 5px 0 5px 10px;
 }
@@ -71,23 +98,218 @@ details input {
   color: red;
 }
 
+.show {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+.boxFilters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+.boxFilters label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.boxNavigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 100%;
+}
+.boxNavigation .arrLeftTop,
+.boxNavigation .arrRightTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #202020;
+  background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(32, 32, 32) 15%, rgb(52, 32, 32) 25%, rgb(216, 29, 36) 85%, rgb(236, 29, 36) 100%);
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px #151515, 1.25px 1.25px 2.25px #151515;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boxNavigation .arrhide {
+  width: 25px;
+  height: 25px;
+}
+.boxNavigation .arrLeftTop {
+  background: linear-gradient(90deg, rgb(230, 36, 41) 15%, rgb(32, 32, 32) 100%);
+}
+.boxNavigation .boxSeePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  gap: 10px;
+}
+
+.BoxCards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 2px solid #E62429;
+  padding: 15px;
+  border-radius: 15px;
+  gap: 44px;
+}
+.BoxCards .boxCardFav {
+  width: 300px;
+  height: 300px;
+  border-radius: 15px;
+}
+.BoxCards .boxCardFav a {
+  border: 2px solid purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+  border-radius: 15px;
+  gap: 10px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-out;
+  margin-bottom: 5px;
+  perspective: 1000px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+}
+.BoxCards .boxCardFav a .back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  transform: rotateY(180deg);
+  background: #202020;
+  background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(32, 32, 32) 15%, rgb(52, 32, 32) 25%, rgb(216, 29, 36) 85%, rgb(236, 29, 36) 100%);
+}
+.BoxCards .boxCardFav a .back .boxBackInner {
+  width: 90%;
+  height: 50%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: justify;
+}
+.BoxCards .boxCardFav a .front {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 15px;
+}
+.BoxCards .boxCardFav a .front img {
+  width: 300px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0px 0px 1px purple, 0px 0px 1px purple, 0px 0px 1px purple, 0px 0px 10px purple;
+}
+.BoxCards .boxCardFav a .front .boxHearthMore {
+  height: 30px;
+  position: absolute;
+  top: 92.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}
+.BoxCards .boxCardFav a .front .boxHearthMore .more {
+  min-width: 50px;
+  border-radius: 15px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #202020;
+  background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(32, 32, 32) 15%, rgb(52, 32, 32) 25%, rgb(216, 29, 36) 85%, rgb(236, 29, 36) 100%);
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px #151515, 1.25px 1.25px 2.25px #151515;
+}
+.BoxCards .boxCardFav a .front .boxHearthMore .more .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.boxCardFav button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #202020;
+  background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(32, 32, 32) 15%, rgb(52, 32, 32) 25%, rgb(216, 29, 36) 85%, rgb(236, 29, 36) 100%);
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px #151515, 1.25px 1.25px 2.25px #151515;
+}
+
+.flipCardIn {
+  transform: rotateY(180deg);
+}
+
+@media all and (min-width: 1200px) {
+  .BoxCards {
+    justify-content: flex-start;
+  }
+}
 header {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   background-color: #202020;
   color: #FFFFFF;
-  height: 80px;
-  padding: 20px;
+  padding: 10px 0 10px 0;
 }
 header .wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
 }
-header .wrapper img {
-  width: 200px;
+header .wrapper .boxLogo {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .wrapper .boxLogo img {
+  width: 100%;
   border-radius: 5px;
 }
 header .wrapper .boxInput {
@@ -95,9 +317,15 @@ header .wrapper .boxInput {
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  width: 30%;
   gap: 10px;
   height: 80px;
+  width: 100%;
+}
+header .wrapper .boxInput label {
+  width: 100%;
+}
+header .wrapper .boxInput label input {
+  width: 95%;
 }
 header .wrapper .boxInput details {
   display: flex;
@@ -111,15 +339,101 @@ header .wrapper nav {
 }
 header .wrapper nav ul {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .wrapper nav ul .iconsignup,
+header .wrapper nav ul .login,
+header .wrapper nav ul .logout {
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #202020;
+  background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(32, 32, 32) 15%, rgb(52, 32, 32) 25%, rgb(216, 29, 36) 85%, rgb(236, 29, 36) 100%);
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px #151515, 1.25px 1.25px 2.25px #151515;
+  width: 30px;
+  height: 30px;
+}
+header .wrapper nav ul .iconsignup,
+header .wrapper nav ul .logout {
+  width: 30px;
+  height: 30px;
+}
+header .wrapper nav ul .login {
+  width: 27px;
+  height: 27px;
+}
+header .wrapper nav ul .iconsignup .fa-user-plus {
+  margin: auto;
+  border-radius: 50%;
+  padding-left: 5px;
+  height: 15px;
+  width: 15px;
+}
+header .wrapper nav ul .login {
+  border-width: 2px;
+  border-style: outset;
+  border-color: #545454;
+}
+header .wrapper nav ul .login:active {
+  border-style: inset;
 }
 header .wrapper nav ul li:first-child {
   display: flex;
   gap: 10px;
 }
 
+@media all and (min-width: 768px) {
+  header {
+    height: 80px;
+    padding: 20px;
+    flex-direction: row !important;
+  }
+  header .wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  header .wrapper .boxLogo {
+    width: -moz-fit-content;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  header .wrapper .boxLogo img {
+    width: 200px;
+    border-radius: 5px;
+  }
+  header .wrapper .boxInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    height: 80px;
+    width: 100%;
+    padding: 0 20px 0 20px;
+  }
+  header .wrapper .boxInput label input {
+    width: 95% !important;
+  }
+  header .wrapper nav {
+    width: 50%;
+    padding: 20px;
+  }
+  header .wrapper nav ul {
+    gap: 10px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
 /* MODAL */
 .boxModal {
   width: 100vw;
@@ -155,10 +469,6 @@ header .wrapper nav ul li:first-child {
   width: 100%;
 }
 
-.boxModalContent div:first-child {
-  width: 110%;
-}
-
 .boxModalContent div img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -191,13 +501,17 @@ header .wrapper nav ul li:first-child {
   padding: 1.5rem 2rem 2rem 2rem;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
-  width: 43%;
 }
-
-input[type=submit] {
-  width: 50%;
+.boxModalContent form label {
+  width: 100%;
+}
+.boxModalContent form label input#email, .boxModalContent form label input#username {
+  width: 100%;
+}
+.boxModalContent form input[type=submit] {
+  width: 100%;
   padding: 5px 10px 5px 10px;
 }
 
@@ -206,18 +520,19 @@ input[type=submit] {
 }
 
 .boxLogin {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 85vh;
+  overflow: hidden;
   background-image: url("../images/marvel-background-web.webp");
-  padding: 10%;
-  border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .boxLogin form {
+  position: absolute;
+  top: 60vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -225,118 +540,27 @@ input[type=submit] {
   gap: 10px;
 }
 .boxLogin form input[type=submit] {
-  width: 60%;
-  padding: 5px 10px 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #202020;
+  background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(32, 32, 32) 15%, rgb(52, 32, 32) 25%, rgb(216, 29, 36) 85%, rgb(236, 29, 36) 100%);
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px #151515, 1.25px 1.25px 2.25px #151515;
+  width: 100%;
+  height: 30px;
+  border-radius: 15px;
+}
+.boxLogin form label:last-child {
+  width: 100%;
 }
 
 main {
   background-color: #202020;
   color: #FFFFFF;
-}
-main .boxArticles {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  border: 2px solid #E62429;
-  gap: 4%;
-  padding: 15px;
-}
-main .boxArticles .boxCardFav {
-  width: 25%;
-}
-main .boxArticles .boxCardFav a {
-  border: 2px solid #E62429;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  height: 300px;
-  border-radius: 15px;
-  gap: 10px;
-  overflow: hidden;
-  position: relative;
-  transition: transform 0.75s linear;
-  transform-style: preserve-3d;
-  margin-bottom: 5px;
-}
-main .boxArticles .boxCardFav a .back {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border: 2px solid purple;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
-main .boxArticles .boxCardFav a .front {
-  width: 100%;
-  height: 100%;
-  z-index: 800;
-  position: absolute;
-  z-index: 0;
-  backface-visibility: hidden;
-}
-main .boxArticles .boxCardFav a .front:hover {
-  transform: rotateY(180deg);
-}
-main .boxArticles .boxCardFav a .front img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 5px;
-}
-main .boxArticles .boxCardFav button {
-  width: 100%;
-  border-radius: 15px;
-  background: rgb(32, 32, 32);
-  background: linear-gradient(90deg, rgb(32, 32, 32) 15%, rgb(230, 36, 41) 100%);
-  color: #FFFFFF;
-  text-shadow: 1px 1px 2px #151515, 1.25px 1.25px 2.25px #151515;
-  font-size: 1.05rem;
-  font-weight: 600;
-}
-main .boxArticles .boxCardFav button:not(article:last-child) {
-  margin-bottom: 15px;
-}
-
-.boxCard {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 25vw;
-  gap: 10px;
-  padding: 10px;
-  border: 2px solid red;
-  padding: 20px;
-  border-radius: 15px;
-}
-.card img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
-.card h3 {
-  text-align: center;
-  margin-bottom: 10px;
-}
-.card p {
-  overflow: hidden;
-  text-align: justify;
-  height: 98px;
 }
 
 .boxComics {
@@ -426,27 +650,87 @@ main .boxArticles .boxCardFav button:not(article:last-child) {
   margin-left: 350rem;
 }
 
-.arrLeftTop {
-  position: absolute;
-  top: 15%;
-  left: 5%;
-  transform: translate(-50%, -50%);
+.boxCharacterId {
+  width: 100%;
+  height: 100%;
 }
-
-.arrRightTop {
-  position: absolute;
-  top: 15%;
-  left: 95%;
-  transform: translate(-50%, -50%);
+.boxCharacterId .wrapper {
+  padding-top: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
 }
-
-.arrLeftTop,
-.arrRightTop {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: #E62429;
+.boxCharacterId .wrapper .card {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  width: -moz-fit-content;
+  width: fit-content;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+  background: #202020;
+  background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(32, 32, 32) 15%, rgb(52, 32, 32) 25%, rgb(216, 29, 36) 85%, rgb(236, 29, 36) 100%);
+  border-radius: 10px;
+  padding: 10px;
+}
+.boxCharacterId .wrapper .card .titleCard {
+  padding: 5px 0 10px 0;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+.boxCharacterId .wrapper .card .bodyCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.boxCharacterId .wrapper .card .bodyCard img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%;
+}
+.boxCharacterId .wrapper .card .bodyCard p {
+  padding: 10px;
+  width: 230px;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: visible;
+  background-color: rgb(52, 32, 32);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+@media all and (min-width: 1200px) {
+  .boxCharacterId .wrapper .card {
+    width: 90%;
+    height: 50%;
+  }
+  .boxCharacterId .wrapper .card .bodyCard {
+    flex-direction: row;
+    width: 90%;
+    height: 90%;
+  }
+  .boxCharacterId .wrapper .card .bodyCard img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 0;
+    width: 50%;
+    height: 100%;
+  }
+  .boxCharacterId .wrapper .card .bodyCard p {
+    padding: 10px;
+    width: 50%;
+    height: calc(100% - 20px);
+    overflow: visible;
+    background-color: rgb(52, 32, 32);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 10px;
+  }
 }/*# sourceMappingURL=App.css.map */

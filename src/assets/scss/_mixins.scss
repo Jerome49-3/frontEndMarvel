@@ -1,3 +1,8 @@
+@mixin backLinear {
+  background: #202020;
+  background: linear-gradient(90deg, rgba(32, 32, 32, 1) 0%, rgba(32, 32, 32, 1) 15%, rgba(52, 32, 32, 1) 25%, rgba(216, 29, 36, 1) 85%, rgba(236, 29, 36, 1) 100%);
+}
+
 @mixin flexCenter {
   display: flex;
   justify-content: center;
@@ -28,4 +33,34 @@
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
+}
+
+@mixin flexColTopCenter {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin flexColTopStart {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+@mixin flexAround {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@mixin btn {
+  @include flexCenter;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  @include backLinear;
+  color: $fontTxt;
+  text-shadow: 1px 1px 2px $bannerBlack, 1.25px 1.25px 2.25px $bannerBlack;
 }

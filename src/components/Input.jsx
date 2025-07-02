@@ -8,10 +8,8 @@ const Input = ({
   autocomplete,
 }) => {
   return (
-    <>
-      <>
-        <label htmlFor={inputId}>{label}</label>
-      </>
+    <label htmlFor={inputId}>
+      {label}
       <input
         id={inputId}
         type={type}
@@ -23,7 +21,7 @@ const Input = ({
         }}
         value={value}
       />
-    </>
+    </label>
   );
 };
 

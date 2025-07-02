@@ -1,9 +1,10 @@
 import Image from "./Image";
-import marvelLogo from "../assets/images/marvel-logo.svg";
+import marvelLogo from "/imgs/marvelous.svg";
 import { Link, useNavigate } from "react-router-dom";
 import Input from "./Input";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Cookies from "js-cookie";
+import BoxFiltersNbrCard from "./BoxFiltersNbrCard";
 
 const Header = ({
   show,
@@ -22,11 +23,9 @@ const Header = ({
   return (
     <header>
       <div className="wrapper">
-        <div className="boxLogo">
-          <Link to="/">
-            <Image src={marvelLogo} alt="marvel" />
-          </Link>
-        </div>
+        <Link to="/" className="boxLogo">
+          <Image src={marvelLogo} alt="marvel" />
+        </Link>
         <div className="boxInput">
           <Input
             type="text"
@@ -36,27 +35,12 @@ const Header = ({
             value={name}
             autocomplete={autocomplete}
           />
-          <details>
-            <summary>filtres</summary>
-            <Input
-              type="number"
-              label="limiter à"
-              inputId="limit"
-              min="1"
-              max="100"
-              value={limit}
-              setState={setLimit}
-            />
-            <Input
-              type="number"
-              label="passer"
-              inputId="limit"
-              min="1"
-              max="100"
-              value={skip}
-              setState={setSkip}
-            />
-          </details>
+          <BoxFiltersNbrCard
+            limit={limit}
+            setLimit={setLimit}
+            skip={skip}
+            setSkip={setSkip}
+          />
         </div>
         <nav>
           <ul>

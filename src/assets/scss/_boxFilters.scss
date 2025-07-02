@@ -1,0 +1,11 @@
+.boxFilters {
+  @include flexCenter;
+  width: 100%;
+  gap: 10px;
+
+  & label {
+    @include flexCenter;
+    width: 100%;
+    gap: 20px;
+  }
+}

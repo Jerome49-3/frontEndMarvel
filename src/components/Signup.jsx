@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Input from "./Input";
 import Image from "./Image";
-import SmallLogo from "../assets/images/marvel-logo.svg";
+import SmallLogo from "/imgs/marvelous.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Cookies from "js-cookie";
 
@@ -65,7 +65,7 @@ const SignUp = ({ show, setShow, icon1, icon2, token, setToken }) => {
         <form onSubmit={handleSubmit} className="boxForm">
           <Input
             value={username}
-            id="username"
+            inputId="username"
             type="text"
             placeholder="Username"
             setState={setUsername}
@@ -73,7 +73,7 @@ const SignUp = ({ show, setShow, icon1, icon2, token, setToken }) => {
           />
           <Input
             value={email}
-            id="email"
+            inputId="email"
             type="email"
             placeholder="Email"
             setState={setEmail}
@@ -82,7 +82,7 @@ const SignUp = ({ show, setShow, icon1, icon2, token, setToken }) => {
           <div className="boxPsswd">
             <Input
               value={password}
-              id="password"
+              inputId="password"
               type={type}
               placeholder="Mot de passe"
               setState={setPassword}

@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-// import Pagination from '../components/Pagination';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 //components
 import Loading from "../components/Loading";
 
-const Comics = ({ name, limit, skip, setSkip, page, setPage }) => {
+const Comics = ({ name, limit, skip }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 

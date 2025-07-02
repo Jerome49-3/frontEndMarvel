@@ -1,0 +1,26 @@
+.boxNavigation {
+  @include flexCenter;
+  height: 35px;
+  width: 100%;
+
+  .arrLeftTop,
+  .arrRightTop {
+    @include btn;
+    @include flexCenter;
+  }
+
+  .arrhide {
+    width: 25px;
+    height: 25px;
+  }
+
+  .arrLeftTop {
+    background: linear-gradient(90deg, rgba(230, 36, 41, 1) 15%, rgba(32, 32, 32, 1) 100%);
+  }
+
+  .boxSeePage {
+    @include flexCenter;
+    width: 50%;
+    gap: 10px;
+  }
+}

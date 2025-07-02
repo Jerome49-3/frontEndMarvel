@@ -33,10 +33,6 @@
   width: 100%;
 }
 
-.boxModalContent div:first-child {
-  width: 110%;
-}
-
 .boxModalContent div img {
   object-fit: cover;
 }
@@ -66,14 +62,25 @@
 .boxModalContent form {
   gap: 5px;
   padding: 1.5rem 2rem 2rem 2rem;
-  @include flexColCenter;
-  width: 43%;
+  @include flexColStart;
+
+  & label {
+    width: 100%;
+
+    & input#email,
+    & input#username {
+      width: 100%;
+    }
+  }
+
+  input[type="submit"] {
+    width: 100%;
+    padding: 5px 10px 5px 10px;
+
+  }
 }
 
-input[type="submit"] {
-  width: 50%;
-  padding: 5px 10px 5px 10px;
-}
+
 
 .hide {
   display: none;
