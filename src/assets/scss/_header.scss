@@ -97,7 +97,19 @@ header {
 }
 
 // BREAKPOINTS
-// @media all and (min-width : 576px) {}
+@media all and (min-width : 576px) {
+  header {
+    width: 100%;
+
+    .wrapper {
+      width: 100%;
+
+      .boxLogo {
+        width: 100%;
+      }
+    }
+  }
+}
 
 @media all and (min-width : 768px) {
   header {

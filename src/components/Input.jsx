@@ -1,15 +1,16 @@
 const Input = ({
-  label,
+  labelTxt,
   value,
   inputId,
   type,
   placeholder,
   setState,
   autocomplete,
+  classLabel,
 }) => {
   return (
-    <label htmlFor={inputId}>
-      {label}
+    <label htmlFor={inputId} className={classLabel}>
+      {labelTxt && <p>{labelTxt}</p>}
       <input
         id={inputId}
         type={type}

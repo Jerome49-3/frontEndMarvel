@@ -1,5 +1,11 @@
 main {
   background-color: $darkMode;
   color: $fontTxt;
-  height: calc(100vh - 80px);
+
+  .wrapper {
+    height: calc(var(--fixHeight) - 80px);
+    background-image: url('../images/marvel-background-web.webp');
+    background-size: cover;
+    border-radius: 15px;
+  }
 }

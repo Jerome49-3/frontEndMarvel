@@ -1,6 +1,5 @@
 html,
-body,
-main {
+body {
   width: 100vw;
   height: 100vh;
   background-color: #202020;
@@ -22,12 +21,12 @@ main {
 }
 @media all and (min-width: 576px) {
   .wrapper {
-    max-width: 530px;
+    max-width: 540px;
   }
 }
 @media all and (min-width: 768px) {
   .wrapper {
-    max-width: 730px;
+    max-width: 720px;
   }
 }
 @media all and (min-width: 992px) {
@@ -37,15 +36,13 @@ main {
 }
 @media all and (min-width: 1200px) {
   .wrapper {
-    max-width: 1024px;
+    max-width: 1140px;
   }
 }
-
-main .wrapper {
-  background-image: url("../images/marvel-background-web.webp");
-  background-size: cover;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+@media all and (min-width: 1400px) {
+  .wrapper {
+    max-width: 1320px;
+  }
 }
 
 * a {
@@ -291,10 +288,26 @@ details input {
   -moz-transform: rotateY(180deg);
 }
 
+@media all and (min-width: 576px) {
+  .BoxCards {
+    justify-content: flex-start;
+  }
+  .BoxCards .boxCardFav {
+    width: 240px;
+  }
+}
+@media all and (min-width: 768px) {
+  .BoxCards {
+    justify-content: space-around;
+    gap: 30px;
+  }
+  .BoxCards .boxCardFav {
+    width: 260px;
+  }
+}
 @media all and (min-width: 1200px) {
   .BoxCards {
     justify-content: flex-start;
-    gap: 44px;
   }
   .BoxCards .boxCardFav {
     width: 300px;
@@ -397,6 +410,17 @@ header .wrapper nav ul li:first-child {
   gap: 10px;
 }
 
+@media all and (min-width: 576px) {
+  header {
+    width: 100%;
+  }
+  header .wrapper {
+    width: 100%;
+  }
+  header .wrapper .boxLogo {
+    width: 100%;
+  }
+}
 @media all and (min-width: 768px) {
   header {
     height: 80px;
@@ -571,7 +595,12 @@ header .wrapper nav ul li:first-child {
 main {
   background-color: #202020;
   color: #FFFFFF;
-  height: calc(100vh - 80px);
+}
+main .wrapper {
+  height: calc(var(--fixHeight) - 80px);
+  background-image: url("../images/marvel-background-web.webp");
+  background-size: cover;
+  border-radius: 15px;
 }
 
 .boxComics {
@@ -744,4 +773,17 @@ main {
     border-top-left-radius: 0;
     border-top-right-radius: 10px;
   }
+}
+footer {
+  width: 100%;
+  height: 60px;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=App.css.map */

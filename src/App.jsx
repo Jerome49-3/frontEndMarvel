@@ -39,11 +39,10 @@ import Comic from "./pages/Comic";
 import Favorites from "./pages/Favorites";
 
 //components
-import Header from "./components/Header";
 import ComicsId from "./pages/ComicsId";
 import Signup from "./components/Signup";
 import Login from "./pages/Login";
-import Footer from "./components/Footer";
+import MainLayout from "./layout/MainLayout";
 
 function App() {
   const [name, setName] = useState("");
@@ -73,75 +72,80 @@ function App() {
   return (
     <>
       <Router>
-        <Header
-          name={name}
-          setName={setName}
-          limit={limit}
-          setLimit={setLimit}
-          skip={skip}
-          setSkip={setSkip}
-          show={show}
-          setShow={setShow}
-          token={token}
-          setToken={setToken}
-          autocomplete="on"
-        />
         <Routes>
-          {/* Get a list of characters */}
           <Route
             path="/"
             element={
-              <Home
+              <MainLayout
                 name={name}
+                setName={setName}
                 limit={limit}
+                setLimit={setLimit}
                 skip={skip}
-                fav={fav}
-                setFav={setFav}
                 setSkip={setSkip}
-                setPage={setPage}
-                page={page}
                 show={show}
                 setShow={setShow}
-                count={count}
-                setCount={setCount}
-                faStar={faStar}
-                farStar={farStar}
-                faChevronUp={faChevronUp}
-                faChevronDown={faChevronDown}
-              />
-            }
-          />
-          {/* Get a the infos of a specific character */}
-          <Route path="/character/:characterId" element={<CharacterId />} />
-          {/* Get a list of comics */}
-          <Route
-            path="/comics"
-            element={
-              <Comics
-                name={name}
-                limit={limit}
-                skip={skip}
-                fav={fav}
-                setFav={setFav}
-              />
-            }
-          />
-          {/* Get a list of comics containing a specific character */}
-          <Route path="/comics/:characterId" element={<ComicsId />} />
-          {/* Get all informations of specific comic */}
-          <Route path="/comic/:comicId" element={<Comic />} />
-          <Route
-            path="/favorites"
-            element={
-              <Favorites
-                fav={fav}
-                faStar={faStar}
-                farStar={farStar}
                 token={token}
+                setToken={setToken}
               />
             }
-          />
-          <Route path="/login" element={<Login setToken={setToken} />} />
+          >
+            {/* Get a list of characters */}
+            <Route
+              index
+              element={
+                <Home
+                  name={name}
+                  limit={limit}
+                  skip={skip}
+                  fav={fav}
+                  setFav={setFav}
+                  setSkip={setSkip}
+                  setPage={setPage}
+                  page={page}
+                  show={show}
+                  setShow={setShow}
+                  count={count}
+                  setCount={setCount}
+                  faStar={faStar}
+                  farStar={farStar}
+                  faChevronUp={faChevronUp}
+                  faChevronDown={faChevronDown}
+                />
+              }
+            />
+            {/* Get a the infos of a specific character */}
+            <Route path="/character/:characterId" element={<CharacterId />} />
+            {/* Get a list of comics */}
+            <Route
+              path="/comics"
+              element={
+                <Comics
+                  name={name}
+                  limit={limit}
+                  skip={skip}
+                  fav={fav}
+                  setFav={setFav}
+                />
+              }
+            />
+            {/* Get a list of comics containing a specific character */}
+            <Route path="/comics/:characterId" element={<ComicsId />} />
+            {/* Get all informations of specific comic */}
+            <Route path="/comic/:comicId" element={<Comic />} />
+            <Route
+              path="/favorites"
+              element={
+                <Favorites
+                  fav={fav}
+                  faStar={faStar}
+                  farStar={farStar}
+                  token={token}
+                />
+              }
+            />
+            <Route path="/login" element={<Login setToken={setToken} />} />
+          </Route>
         </Routes>
         {show && (
           <Signup
@@ -153,7 +157,6 @@ function App() {
             setToken={setToken}
           />
         )}
-        <Footer />
       </Router>
     </>
   );

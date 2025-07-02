@@ -88,25 +88,23 @@ const Home = ({
     <Loading />
   ) : (
     <>
-      <main>
-        <section className="wrapper" id="top" ref={refDiv}>
-          <BoxCards
-            fav={fav}
-            data={data}
-            formatImg={formatImg}
-            setFav={setFav}
-            faStar={faStar}
-            farStar={farStar}
-            page={page}
-            setPage={setPage}
-            setSkip={setSkip}
-            limit={limit}
-            skip={skip}
-            count={count}
-          />
-          {/* <Link to='#'>top</Link> */}
-        </section>
-      </main>
+      <section className="wrapper" id="top" ref={refDiv}>
+        <BoxCards
+          fav={fav}
+          data={data}
+          formatImg={formatImg}
+          setFav={setFav}
+          faStar={faStar}
+          farStar={farStar}
+          page={page}
+          setPage={setPage}
+          setSkip={setSkip}
+          limit={limit}
+          skip={skip}
+          count={count}
+        />
+        {/* <Link to='#'>top</Link> */}
+      </section>
     </>
   );
 };

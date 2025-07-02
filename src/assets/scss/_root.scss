@@ -1,6 +1,5 @@
 html,
-body,
-main {
+body {
   width: 100vw;
   height: 100vh;
   background-color: $darkMode;
@@ -18,11 +17,11 @@ main {
   height: 100%;
 
   @media all and (min-width : 576px) {
-    max-width: 530px;
+    max-width: 540px;
   }
 
   @media all and (min-width : 768px) {
-    max-width: 730px;
+    max-width: 720px;
   }
 
   @media all and (min-width : 992px) {
@@ -30,16 +29,12 @@ main {
   }
 
   @media all and (min-width : 1200px) {
-    max-width: 1024px;
+    max-width: 1140px;
   }
 
-}
-
-main .wrapper {
-  background-image: url('../images/marvel-background-web.webp');
-  background-size: cover;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  @media all and (min-width : 1400px) {
+    max-width: 1320px;
+  }
 }
 
 * a {

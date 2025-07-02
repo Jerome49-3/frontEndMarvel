@@ -3,6 +3,8 @@
   width: 100%;
   gap: 10px;
 
+  .limitLabel {}
+
   & label {
     @include flexCenter;
     width: 100%;

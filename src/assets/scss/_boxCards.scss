@@ -112,16 +112,32 @@
 
 
   // BREAKPOINTS
-  // @media all and (min-width : 576px) {}
+  @media all and (min-width : 576px) {
+    .BoxCards {
+      justify-content: flex-start;
 
-  // @media all and (min-width : 768px) {}
+      .boxCardFav {
+        width: 240px;
+      }
+    }
+  }
+
+  @media all and (min-width : 768px) {
+    .BoxCards {
+      justify-content: space-around;
+      gap: 30px;
+
+      .boxCardFav {
+        width: 260px;
+      }
+    }
+  }
 
   // @media all and (min-width : 992px) {}
 
   @media all and (min-width : 1200px) {
     .BoxCards {
       justify-content: flex-start;
-      gap: 44px;
 
       .boxCardFav {
         width: 300px;
