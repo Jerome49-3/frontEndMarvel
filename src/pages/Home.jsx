@@ -8,7 +8,6 @@ import BoxCards from "../components/BoxCards";
 
 //lib
 import infoDiv from "../assets/lib/infoDiv";
-import addRemoveListener from "../assets/lib/addRemoveListener";
 
 const Home = ({
   name,
@@ -50,6 +49,10 @@ const Home = ({
         console.log("response?.data in Home:", response?.data);
         //si response
         if (response) {
+          console.log(
+            "response.headers.getAccess-Control-Allow-Origin:",
+            response.headers.get("Access-Control-Allow-Origin")
+          );
           //mettre a jour la valeur du state data avec le retour de la response.data
           const data = response?.data?.dataMarv?.data;
           console.log("data1:", data);
@@ -64,17 +67,13 @@ const Home = ({
           const counter = response?.data?.dataMarv?.count;
           // console.log('data1:', data);
           setData(filterImg);
-          // console.log('data2:', data);
+          console.log("data2:", data);
           setCount(counter);
           console.log("count:", count);
           //actualiser la valeur du loading à false
           setIsLoading(false);
         }
-        if (Loading !== true) {
-          const scroll = addRemoveListener("scroll", (scroll) => {
-            console.log("listen scroll", scroll);
-          });
-          console.log("listen scroll", scroll);
+        if (isLoading !== true) {
           infoDiv(refDiv, setDimDiv);
         }
       } catch (error) {

@@ -1,8 +1,19 @@
 import BoxCards from "../components/BoxCards";
 import Links from "../components/Links";
+import { Navigate } from "react-router-dom";
 
-const Favorites = ({ fav, data, formatImg, setFav, faStar, farStar }) => {
-  return (
+const Favorites = ({
+  fav,
+  data,
+  formatImg,
+  setFav,
+  faStar,
+  farStar,
+  token,
+}) => {
+  return !token ? (
+    <Navigate to="/login" />
+  ) : (
     <div className="boxFavorites">
       <div className="wrapper">
         {fav.length > 0 ? (

@@ -1,5 +1,3 @@
-// const [dimDiv, setDimDiv] = useState({});
-
 const infoDiv = (refDiv, setDimDiv) => {
   try {
     const getDimDiv = refDiv.current.getBoundingClientRect();

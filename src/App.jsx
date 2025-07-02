@@ -131,7 +131,14 @@ function App() {
           <Route path="/comic/:comicId" element={<Comic />} />
           <Route
             path="/favorites"
-            element={<Favorites fav={fav} faStar={faStar} farStar={farStar} />}
+            element={
+              <Favorites
+                fav={fav}
+                faStar={faStar}
+                farStar={farStar}
+                token={token}
+              />
+            }
           />
           <Route path="/login" element={<Login setToken={setToken} />} />
         </Routes>
