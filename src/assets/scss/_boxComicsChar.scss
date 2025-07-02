@@ -1,0 +1,53 @@
+//ComicsCharacter
+.boxComicsChar {
+  border: 2px solid red;
+  gap: 20px;
+  padding: 10px;
+  height: 75vh;
+
+  .boxSlide {
+    border: 2px solid green;
+    overflow: hidden;
+    overflow-x: scroll;
+    margin-top: 6rem;
+
+    .slide {
+      border: 2px solid purple;
+      @include flexCenter;
+      gap: 25px;
+      padding: 10px;
+      width: 100%;
+
+      article {
+        @include flexColCenter;
+        border: 2px solid blue;
+        min-width: calc(100% /3);
+        height: 400px;
+        gap: 20px;
+        border: 2px solid $redMarv;
+        border-radius: 15px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 250px;
+          object-fit: cover;
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+        }
+
+        p {
+          text-align: justify;
+          height: 95px;
+          margin-top: -10px;
+          overflow: hidden;
+        }
+      }
+
+      article:first-child {
+        margin-left: 350rem;
+      }
+
+    }
+  }
+}

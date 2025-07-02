@@ -170,7 +170,7 @@ details input {
   gap: 44px;
 }
 .BoxCards .boxCardFav {
-  width: 300px;
+  width: 100%;
   height: 300px;
   border-radius: 15px;
 }
@@ -180,7 +180,7 @@ details input {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 300px;
+  width: 100%;
   height: 300px;
   border-radius: 15px;
   gap: 10px;
@@ -225,7 +225,7 @@ details input {
   border-radius: 15px;
 }
 .BoxCards .boxCardFav a .front img {
-  width: 300px;
+  width: 100%;
   height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -561,6 +561,7 @@ header .wrapper nav ul li:first-child {
 main {
   background-color: #202020;
   color: #FFFFFF;
+  height: 100%;
 }
 
 .boxComics {
