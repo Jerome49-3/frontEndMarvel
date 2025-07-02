@@ -31,14 +31,22 @@
         //   transform: rotateY(180deg);
         // }
 
+        .front,
         .back {
-          @include flexColCenter;
           position: absolute;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          -moz-backface-visibility: hidden;
           width: 100%;
           height: 100%;
           border-radius: 15px;
+        }
+
+        .back {
+          @include flexColCenter;
           transform: rotateY(180deg);
           @include backLinear;
+          -moz-transform: rotateY(180deg);
 
           .boxBackInner {
             width: 90%;
@@ -51,14 +59,8 @@
         }
 
         .front {
-          // border: 2px solid lightsalmon;
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-          border-radius: 15px;
 
+          // border: 2px solid lightsalmon;
           & img {
             width: 100%;
             height: 300px;
@@ -105,6 +107,7 @@
 
   .flipCardIn {
     transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
   }
 
 
@@ -119,6 +122,10 @@
     .BoxCards {
       justify-content: flex-start;
       gap: 44px;
+
+      .boxCardFav {
+        width: 300px;
+      }
     }
   }
 

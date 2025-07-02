@@ -6,6 +6,13 @@ main {
   background-color: #202020;
 }
 
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .wrapper {
   max-width: 300px;
   margin-left: auto;
@@ -192,18 +199,24 @@ details input {
   -moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
   -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
 }
+.BoxCards .boxCardFav a .front,
+.BoxCards .boxCardFav a .back {
+  position: absolute;
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
 .BoxCards .boxCardFav a .back {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
   transform: rotateY(180deg);
   background: #202020;
   background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(32, 32, 32) 15%, rgb(52, 32, 32) 25%, rgb(216, 29, 36) 85%, rgb(236, 29, 36) 100%);
+  -moz-transform: rotateY(180deg);
 }
 .BoxCards .boxCardFav a .back .boxBackInner {
   width: 90%;
@@ -215,13 +228,6 @@ details input {
   flex-direction: column;
   justify-content: space-between;
   text-align: justify;
-}
-.BoxCards .boxCardFav a .front {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  backface-visibility: hidden;
-  border-radius: 15px;
 }
 .BoxCards .boxCardFav a .front img {
   width: 100%;
@@ -282,12 +288,16 @@ details input {
 
 .flipCardIn {
   transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
 }
 
 @media all and (min-width: 1200px) {
   .BoxCards {
     justify-content: flex-start;
     gap: 44px;
+  }
+  .BoxCards .boxCardFav {
+    width: 300px;
   }
 }
 header {
@@ -561,7 +571,7 @@ header .wrapper nav ul li:first-child {
 main {
   background-color: #202020;
   color: #FFFFFF;
-  height: 100%;
+  height: calc(100vh - 80px);
 }
 
 .boxComics {

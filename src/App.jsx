@@ -43,6 +43,7 @@ import Header from "./components/Header";
 import ComicsId from "./pages/ComicsId";
 import Signup from "./components/Signup";
 import Login from "./pages/Login";
+import Footer from "./components/Footer";
 
 function App() {
   const [name, setName] = useState("");
@@ -152,6 +153,7 @@ function App() {
             setToken={setToken}
           />
         )}
+        <Footer />
       </Router>
     </>
   );
