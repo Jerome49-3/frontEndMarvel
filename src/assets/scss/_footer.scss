@@ -3,9 +3,15 @@ footer {
   height: 60px;
   z-index: 10;
   @include flexCenter;
+  background-color: #202020;
+  border-top: 2px solid $redMarv;
 
   ul {
     @include flexCenter;
   }
+}
 
+footer.fixed {
+  position: fixed;
+  bottom: 0;
 }

@@ -1,13 +1,27 @@
-.boxFilters {
-  @include flexCenter;
+details {
   width: 100%;
-  gap: 10px;
+  @include flexStart;
 
-  .limitLabel {}
-
-  & label {
+  .boxFilters {
     @include flexCenter;
     width: 100%;
-    gap: 20px;
+    gap: 10px;
+
+    .limitLabel>p {
+      @include flexCenter;
+      width: 100px;
+      word-spacing: 5px;
+    }
+
+    .limitLabel,
+    .passLabel {
+      width: 50px;
+      padding: 5px 10px 5px 10px;
+    }
+
+    & label {
+      @include flexCenter;
+      gap: 20px;
+    }
   }
 }

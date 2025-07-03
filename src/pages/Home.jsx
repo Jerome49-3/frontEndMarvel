@@ -1,13 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useState, useLayoutEffect, useRef } from "react";
+import { useState, useLayoutEffect, useRef, useEffect } from "react";
 import axios from "axios";
 
 //components
 import Loading from "../components/Loading";
 import BoxCards from "../components/BoxCards";
-
+import Button from "../components/Button";
 //lib
 import infoDiv from "../assets/lib/infoDiv";
+import addRemoveListener from "../assets/lib/addRemoveListener";
+import setDimensions from "../assets/lib/setDimensions";
 
 const Home = ({
   name,
@@ -23,10 +25,12 @@ const Home = ({
   farStar,
   count,
   setCount,
+  faChevronUp,
 }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [dimDiv, setDimDiv] = useState();
+  const [dimWindows, setDimWindows] = useState();
   const formatImg =
     "standard_amazing" ||
     "standard_fantastic" ||
@@ -34,6 +38,19 @@ const Home = ({
     "standard_large" ||
     "mg";
   const refDiv = useRef();
+  const handleMoveToTop = () => {
+    scrollTo(24.80000114440918, 104.80000305175781);
+  };
+  //****************************************** //
+  //********** listen event resize *********** //
+  //****************************************** //
+  useEffect(() => {
+    return addRemoveListener("resize", () => setDimensions(setDimWindows));
+  }, [location.pathname]);
+
+  useEffect(() => {
+    return addRemoveListener("load", () => setDimensions(setDimWindows));
+  }, [location.pathname]);
   // console.log('fav0', fav);
   //initialiser un useEffect pour effectuer une requete au chargement de la page
   useLayoutEffect(() => {
@@ -103,7 +120,11 @@ const Home = ({
           skip={skip}
           count={count}
         />
-        {/* <Link to='#'>top</Link> */}
+        <Button
+          icon={faChevronUp}
+          handleClick={handleMoveToTop}
+          classButton="btnChevronUp"
+        />
       </section>
     </>
   );

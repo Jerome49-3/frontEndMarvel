@@ -110,19 +110,315 @@ details input {
   display: none;
 }
 
-.boxFilters {
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #202020;
+  color: #FFFFFF;
+  padding: 10px 0 10px 0;
+}
+header .wrapper {
+  width: 100%;
+}
+header .wrapper .boxLogo {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .wrapper .boxLogo img {
+  width: 100%;
+  border-radius: 5px;
+}
+header .wrapper .boxInput {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  height: 80px;
+  width: 100%;
+}
+header .wrapper .boxInput label {
+  width: 100%;
+}
+header .wrapper .boxInput label input {
+  width: 95%;
+}
+header .wrapper .boxInput details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 30px;
+}
+header .wrapper nav {
+  padding-right: 10px;
+}
+header .wrapper nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .wrapper nav ul .iconsignup,
+header .wrapper nav ul .login,
+header .wrapper nav ul .logout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #202020;
+  background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(32, 32, 32) 15%, rgb(52, 32, 32) 25%, rgb(216, 29, 36) 85%, rgb(236, 29, 36) 100%);
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px #151515, 1.25px 1.25px 2.25px #151515;
+  width: 30px;
+  height: 30px;
+}
+header .wrapper nav ul .iconsignup,
+header .wrapper nav ul .logout {
+  width: 30px;
+  height: 30px;
+}
+header .wrapper nav ul .login {
+  width: 27px;
+  height: 27px;
+}
+header .wrapper nav ul .iconsignup .fa-user-plus {
+  margin: auto;
+  border-radius: 50%;
+  padding-left: 5px;
+  height: 15px;
+  width: 15px;
+}
+header .wrapper nav ul .login {
+  border-width: 2px;
+  border-style: outset;
+  border-color: #545454;
+}
+header .wrapper nav ul .login:active {
+  border-style: inset;
+}
+header .wrapper nav ul li:first-child {
+  display: flex;
+  gap: 10px;
+}
+
+@media all and (min-width: 576px) {
+  header {
+    width: 100%;
+  }
+  header .wrapper {
+    width: 100%;
+  }
+  header .wrapper .boxLogo {
+    width: 100%;
+  }
+}
+@media all and (min-width: 768px) {
+  header {
+    height: 80px;
+    padding: 20px;
+    flex-direction: row !important;
+  }
+  header .wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  header .wrapper .boxLogo {
+    width: -moz-fit-content;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  header .wrapper .boxLogo img {
+    width: 200px;
+    border-radius: 5px;
+  }
+  header .wrapper .boxInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    height: 80px;
+    width: 100%;
+    padding: 0 20px 0 20px;
+  }
+  header .wrapper .boxInput label input {
+    width: 95% !important;
+  }
+  header .wrapper nav {
+    width: 50%;
+    padding: 20px;
+  }
+  header .wrapper nav ul {
+    gap: 10px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
+details {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+details .boxFilters {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   gap: 10px;
 }
-.boxFilters label {
+details .boxFilters .limitLabel > p {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 100px;
+  word-spacing: 5px;
+}
+details .boxFilters .limitLabel,
+details .boxFilters .passLabel {
+  width: 50px;
+  padding: 5px 10px 5px 10px;
+}
+details .boxFilters label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
+}
+
+/* MODAL */
+.boxModal {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/marvel-background-web.webp");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.boxModalContent {
+  background-color: white;
+  padding: 1rem 2rem 2rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 15px;
+  box-shadow: inset 0px 0px 10px #000000, 0px 0px 10px #000000;
+  min-width: 30%;
+  max-width: 90%;
+  gap: 20px;
+}
+
+.boxModalContent div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.boxModalContent div img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.boxModalContent button {
+  text-shadow: 1px 1px 2px white, 1.25px 1.25px 2.25px #000000;
+  background-color: rgba(241, 241, 241, 0.9450980392);
+}
+
+.boxModalContent div img,
+.boxModalContent button {
+  width: 150px;
+  height: 50px;
+  padding: 5px;
+  border-radius: 7.5px;
+  box-shadow: 0px 0px 4px #000000;
+}
+
+.boxModalContent button {
+  width: 40px;
+}
+
+.boxModalContent button:hover {
+  box-shadow: inset 0px 0px 4px #000000;
+}
+
+.boxModalContent form {
+  gap: 5px;
+  padding: 1.5rem 2rem 2rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.boxModalContent form label {
+  width: 100%;
+}
+.boxModalContent form label input#email, .boxModalContent form label input#username {
+  width: 100%;
+}
+.boxModalContent form input[type=submit] {
+  width: 100%;
+  padding: 5px 10px 5px 10px;
+}
+
+.hide {
+  display: none;
+}
+
+.boxLogin {
+  width: 100%;
+  height: 85vh;
+  overflow: hidden;
+  background-image: url("../images/marvel-background-web.webp");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boxLogin form {
+  position: absolute;
+  top: 60vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.boxLogin form input[type=submit] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #202020;
+  background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(32, 32, 32) 15%, rgb(52, 32, 32) 25%, rgb(216, 29, 36) 85%, rgb(236, 29, 36) 100%);
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px #151515, 1.25px 1.25px 2.25px #151515;
+  width: 100%;
+  height: 30px;
+  border-radius: 15px;
+}
+.boxLogin form label:last-child {
+  width: 100%;
 }
 
 .boxNavigation {
@@ -306,301 +602,39 @@ details input {
   }
 }
 @media all and (min-width: 1200px) {
-  .BoxCards {
-    justify-content: flex-start;
-  }
   .BoxCards .boxCardFav {
-    width: 300px;
+    width: 20%;
+    height: 300px;
   }
-}
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #202020;
-  color: #FFFFFF;
-  padding: 10px 0 10px 0;
-}
-header .wrapper {
-  width: 100%;
-}
-header .wrapper .boxLogo {
-  width: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-header .wrapper .boxLogo img {
-  width: 100%;
-  border-radius: 5px;
-}
-header .wrapper .boxInput {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 10px;
-  height: 80px;
-  width: 100%;
-}
-header .wrapper .boxInput label {
-  width: 100%;
-}
-header .wrapper .boxInput label input {
-  width: 95%;
-}
-header .wrapper .boxInput details {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  height: 30px;
-}
-header .wrapper nav {
-  padding-right: 10px;
-}
-header .wrapper nav ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-header .wrapper nav ul .iconsignup,
-header .wrapper nav ul .login,
-header .wrapper nav ul .logout {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #202020;
-  background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(32, 32, 32) 15%, rgb(52, 32, 32) 25%, rgb(216, 29, 36) 85%, rgb(236, 29, 36) 100%);
-  color: #FFFFFF;
-  text-shadow: 1px 1px 2px #151515, 1.25px 1.25px 2.25px #151515;
-  width: 30px;
-  height: 30px;
-}
-header .wrapper nav ul .iconsignup,
-header .wrapper nav ul .logout {
-  width: 30px;
-  height: 30px;
-}
-header .wrapper nav ul .login {
-  width: 27px;
-  height: 27px;
-}
-header .wrapper nav ul .iconsignup .fa-user-plus {
-  margin: auto;
-  border-radius: 50%;
-  padding-left: 5px;
-  height: 15px;
-  width: 15px;
-}
-header .wrapper nav ul .login {
-  border-width: 2px;
-  border-style: outset;
-  border-color: #545454;
-}
-header .wrapper nav ul .login:active {
-  border-style: inset;
-}
-header .wrapper nav ul li:first-child {
-  display: flex;
-  gap: 10px;
-}
-
-@media all and (min-width: 576px) {
-  header {
+  .BoxCards .boxCardFav a {
     width: 100%;
+    height: 100% !important;
   }
-  header .wrapper {
+  .BoxCards .boxCardFav a .front img {
     width: 100%;
-  }
-  header .wrapper .boxLogo {
-    width: 100%;
+    height: 100%;
   }
 }
-@media all and (min-width: 768px) {
-  header {
-    height: 80px;
-    padding: 20px;
-    flex-direction: row !important;
-  }
-  header .wrapper {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  header .wrapper .boxLogo {
-    width: -moz-fit-content;
-    width: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  header .wrapper .boxLogo img {
-    width: 200px;
-    border-radius: 5px;
-  }
-  header .wrapper .boxInput {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    height: 80px;
-    width: 100%;
-    padding: 0 20px 0 20px;
-  }
-  header .wrapper .boxInput label input {
-    width: 95% !important;
-  }
-  header .wrapper nav {
-    width: 50%;
-    padding: 20px;
-  }
-  header .wrapper nav ul {
-    gap: 10px;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
-}
-/* MODAL */
-.boxModal {
-  width: 100vw;
-  height: 100vh;
-  background-image: url("../images/marvel-background-web.webp");
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.boxModalContent {
-  background-color: white;
-  padding: 1rem 2rem 2rem 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 15px;
-  box-shadow: inset 0px 0px 10px #000000, 0px 0px 10px #000000;
-  min-width: 30%;
-  max-width: 90%;
-  gap: 20px;
-}
-
-.boxModalContent div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.boxModalContent div img {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.boxModalContent button {
-  text-shadow: 1px 1px 2px white, 1.25px 1.25px 2.25px #000000;
-  background-color: rgba(241, 241, 241, 0.9450980392);
-}
-
-.boxModalContent div img,
-.boxModalContent button {
-  width: 150px;
-  height: 50px;
-  padding: 5px;
-  border-radius: 7.5px;
-  box-shadow: 0px 0px 4px #000000;
-}
-
-.boxModalContent button {
-  width: 40px;
-}
-
-.boxModalContent button:hover {
-  box-shadow: inset 0px 0px 4px #000000;
-}
-
-.boxModalContent form {
-  gap: 5px;
-  padding: 1.5rem 2rem 2rem 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-}
-.boxModalContent form label {
-  width: 100%;
-}
-.boxModalContent form label input#email, .boxModalContent form label input#username {
-  width: 100%;
-}
-.boxModalContent form input[type=submit] {
-  width: 100%;
-  padding: 5px 10px 5px 10px;
-}
-
-.hide {
-  display: none;
-}
-
-.boxLogin {
-  width: 100%;
-  height: 85vh;
-  overflow: hidden;
-  background-image: url("../images/marvel-background-web.webp");
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.boxLogin form {
-  position: absolute;
-  top: 60vh;
-  left: 50vw;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
-}
-.boxLogin form input[type=submit] {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #202020;
-  background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(32, 32, 32) 15%, rgb(52, 32, 32) 25%, rgb(216, 29, 36) 85%, rgb(236, 29, 36) 100%);
-  color: #FFFFFF;
-  text-shadow: 1px 1px 2px #151515, 1.25px 1.25px 2.25px #151515;
-  width: 100%;
-  height: 30px;
-  border-radius: 15px;
-}
-.boxLogin form label:last-child {
-  width: 100%;
-}
-
 main {
   background-color: #202020;
   color: #FFFFFF;
 }
 main .wrapper {
-  height: calc(var(--fixHeight) - 80px);
   background-image: url("../images/marvel-background-web.webp");
   background-size: cover;
   border-radius: 15px;
+}
+main .wrapper .btnChevronUp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #202020;
+  background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(32, 32, 32) 15%, rgb(52, 32, 32) 25%, rgb(216, 29, 36) 85%, rgb(236, 29, 36) 100%);
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px #151515, 1.25px 1.25px 2.25px #151515;
 }
 
 .boxComics {
@@ -692,7 +726,6 @@ main .wrapper {
 
 .boxCharacterId {
   width: 100%;
-  height: 100%;
 }
 .boxCharacterId .wrapper {
   padding-top: 50px;
@@ -781,9 +814,16 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #202020;
+  border-top: 2px solid #E62429;
 }
 footer ul {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+footer.fixed {
+  position: fixed;
+  bottom: 0;
 }/*# sourceMappingURL=App.css.map */

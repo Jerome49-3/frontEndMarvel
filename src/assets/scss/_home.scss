@@ -3,9 +3,12 @@ main {
   color: $fontTxt;
 
   .wrapper {
-    height: calc(var(--fixHeight) - 80px);
     background-image: url('../images/marvel-background-web.webp');
     background-size: cover;
     border-radius: 15px;
+
+    .btnChevronUp {
+      @include btn;
+    }
   }
 }

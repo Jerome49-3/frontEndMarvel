@@ -69,6 +69,7 @@ function App() {
   });
   const [count, setCount] = useState(0);
   console.log("token", token);
+
   return (
     <>
       <Router>
@@ -111,6 +112,7 @@ function App() {
                   farStar={farStar}
                   faChevronUp={faChevronUp}
                   faChevronDown={faChevronDown}
+                  faChevronUp={faChevronUp}
                 />
               }
             />

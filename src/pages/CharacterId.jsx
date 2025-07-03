@@ -35,31 +35,29 @@ const CharacterId = () => {
   return isLoading ? (
     <Loading />
   ) : (
-    <main>
-      <div className="boxCharacterId">
-        <div className="wrapper">
-          <article className="card">
-            <div className="titleCard">
-              <h3>{data.name}</h3>
-            </div>
-            <div className="bodyCard">
-              <img
-                src={`${data.thumbnail.path}/standard_xlarge.${data.thumbnail.extension}`}
-                alt="comics"
-              />
-              {data.description ? <p>{data.description}</p> : <p></p>}
-              {data.comics.length === 0 ? (
-                <div className="linkComicsChar">
-                  <Link to={`/comics/${characterId}`}>Tout ses comics</Link>
-                </div>
-              ) : (
-                <div></div>
-              )}
-            </div>
-          </article>
-        </div>
+    <div className="boxCharacterId">
+      <div className="wrapper">
+        <article className="card">
+          <div className="titleCard">
+            <h3>{data.name}</h3>
+          </div>
+          <div className="bodyCard">
+            <img
+              src={`${data.thumbnail.path}/standard_xlarge.${data.thumbnail.extension}`}
+              alt="comics"
+            />
+            {data.description ? <p>{data.description}</p> : <p></p>}
+            {data.comics.length === 0 ? (
+              <div className="linkComicsChar">
+                <Link to={`/comics/${characterId}`}>Tout ses comics</Link>
+              </div>
+            ) : (
+              <div></div>
+            )}
+          </div>
+        </article>
       </div>
-    </main>
+    </div>
   );
 };
 

@@ -1,5 +1,7 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useLocation } from "react-router-dom";
+import Button from "./Button";
+import handleBackPage from "../assets/lib/handleBackPage";
+import handleAddPage from "../assets/lib/handleAddPage";
 
 const Navigation = ({ page, setPage, setSkip, limit, skip, count }) => {
   const location = useLocation();
@@ -7,23 +9,11 @@ const Navigation = ({ page, setPage, setSkip, limit, skip, count }) => {
   return (
     <div className="boxNavigation">
       {page > 0 ? (
-        <button
-          className="arrLeftTop"
-          onClick={() => {
-            console.log("page:", page);
-            //au click, j'incrémente de 1
-            const newPage = page - 1;
-            console.log("newPage:", newPage);
-            //j'ajoute la valeur au useState Page
-            setPage(newPage);
-            // je multiplie la valeur de page par le nombre limit
-            const movPage = newPage * limit;
-            console.log("movPage:", movPage);
-            setSkip(movPage);
-          }}
-        >
-          <FontAwesomeIcon icon="chevron-left" />
-        </button>
+        <Button
+          classButton="arrLeftTop"
+          handleClick={() => handleBackPage(page, setPage, limit, setSkip)}
+          icon="chevron-left"
+        />
       ) : (
         <div className="arrhide"></div>
       )}
@@ -36,23 +26,11 @@ const Navigation = ({ page, setPage, setSkip, limit, skip, count }) => {
         <div>{path}</div>
       )}
       {skip < count ? (
-        <button
-          className="arrRightTop"
-          onClick={() => {
-            console.log("page:", page);
-            //au click, j'incrémente de 1
-            const newPage = page + 1;
-            console.log("newPage:", newPage);
-            //j'ajoute la valeur au useState Page
-            setPage(newPage);
-            // je multiplie la valeur de page par le nombre limit
-            const movPage = newPage * limit;
-            console.log("movPage:", movPage);
-            setSkip(movPage);
-          }}
-        >
-          <FontAwesomeIcon icon="chevron-right" />
-        </button>
+        <Button
+          classButton="arrRightTop"
+          handleClick={() => handleAddPage(page, setPage, limit, setSkip)}
+          icon="chevron-right"
+        />
       ) : (
         <div className="arrhide"></div>
       )}
