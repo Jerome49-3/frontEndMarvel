@@ -5,6 +5,7 @@
     padding: 15px;
     border-radius: 15px;
     gap: 20px;
+    position: relative;
 
     .boxCardFav {
       width: 100%;
@@ -27,16 +28,11 @@
         -moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
         -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
 
-        // &:hover {
-        //   transform: rotateY(180deg);
-        // }
-
         .front,
         .back {
           position: absolute;
           -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-          -moz-backface-visibility: hidden;
           width: 100%;
           height: 100%;
           border-radius: 15px;
@@ -81,15 +77,14 @@
             width: 90%;
 
             .more {
-              min-width: 50px;
+              min-width: 40px;
               border-radius: 15px !important;
-              @include flexCenter;
               gap: 5px;
               @include btn;
 
               .dot {
-                width: 7px;
-                height: 7px;
+                width: 5px;
+                height: 5px;
                 border-radius: 50%;
                 background-color: white;
               }

@@ -3,13 +3,14 @@ import Cookies from "js-cookie";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useStateFunc } from "../assets/lib/context/useStateFunc";
 
-const Login = ({ setToken }) => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-
+  const { setToken } = useStateFunc();
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage("");

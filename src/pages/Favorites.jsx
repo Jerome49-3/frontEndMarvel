@@ -1,16 +1,11 @@
+import { useStateFunc } from "../assets/lib/context/useStateFunc";
 import BoxCards from "../components/BoxCards";
 import Links from "../components/Links";
 import { Navigate } from "react-router-dom";
 
-const Favorites = ({
-  fav,
-  data,
-  formatImg,
-  setFav,
-  faStar,
-  farStar,
-  token,
-}) => {
+const Favorites = () => {
+  const { fav, data, formatImg, setFav, faStar, farStar, token } =
+    useStateFunc();
   return !token ? (
     <Navigate to="/login" />
   ) : (

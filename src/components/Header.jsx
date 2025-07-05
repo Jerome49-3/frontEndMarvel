@@ -5,20 +5,11 @@ import Input from "./Input";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Cookies from "js-cookie";
 import BoxFiltersNbrCard from "./BoxFiltersNbrCard";
+import { useStateFunc } from "../assets/lib/context/useStateFunc";
 
-const Header = ({
-  show,
-  setShow,
-  name,
-  setName,
-  limit,
-  token,
-  setToken,
-  setLimit,
-  skip,
-  setSkip,
-  autocomplete,
-}) => {
+const Header = ({ show, setShow }) => {
+  const { name, setName, limit, setLimit, skip, setSkip, token, setToken } =
+    useStateFunc();
   const navigate = useNavigate();
   return (
     <header>
@@ -33,7 +24,6 @@ const Header = ({
             inputId="name"
             setState={setName}
             value={name}
-            autocomplete={autocomplete}
           />
           <BoxFiltersNbrCard
             limit={limit}

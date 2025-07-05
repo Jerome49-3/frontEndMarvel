@@ -10,6 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 }
 
 .wrapper {
@@ -110,6 +111,49 @@ details input {
   display: none;
 }
 
+.btnChevronDown,
+.btnChevronUp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #202020;
+  background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(32, 32, 32) 15%, rgb(52, 32, 32) 25%, rgb(216, 29, 36) 85%, rgb(236, 29, 36) 100%);
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px #151515, 1.25px 1.25px 2.25px #151515;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+  touch-action: manipulation;
+  flex-basis: auto;
+  flex-shrink: 0;
+  list-style: none;
+  margin: 0px;
+  min-height: 0px;
+  min-width: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+.btnChevronDown .svg-inline--fa,
+.btnChevronUp .svg-inline--fa {
+  height: 25px;
+}
+
+.btnChevronDown {
+  top: 5%;
+  position: sticky;
+  z-index: 10;
+}
+
+.btnChevronUp {
+  bottom: 1%;
+  position: sticky;
+  z-index: 10;
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -118,6 +162,7 @@ header {
   background-color: #202020;
   color: #FFFFFF;
   padding: 10px 0 10px 0;
+  width: 100%;
 }
 header .wrapper {
   width: 100%;
@@ -175,6 +220,7 @@ header .wrapper nav ul .logout {
   background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(32, 32, 32) 15%, rgb(52, 32, 32) 25%, rgb(216, 29, 36) 85%, rgb(236, 29, 36) 100%);
   color: #FFFFFF;
   text-shadow: 1px 1px 2px #151515, 1.25px 1.25px 2.25px #151515;
+  cursor: pointer;
   width: 30px;
   height: 30px;
 }
@@ -221,7 +267,6 @@ header .wrapper nav ul li:first-child {
 @media all and (min-width: 768px) {
   header {
     height: 80px;
-    padding: 20px;
     flex-direction: row !important;
   }
   header .wrapper {
@@ -413,6 +458,7 @@ details .boxFilters label {
   background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(32, 32, 32) 15%, rgb(52, 32, 32) 25%, rgb(216, 29, 36) 85%, rgb(236, 29, 36) 100%);
   color: #FFFFFF;
   text-shadow: 1px 1px 2px #151515, 1.25px 1.25px 2.25px #151515;
+  cursor: pointer;
   width: 100%;
   height: 30px;
   border-radius: 15px;
@@ -440,6 +486,7 @@ details .boxFilters label {
   background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(32, 32, 32) 15%, rgb(52, 32, 32) 25%, rgb(216, 29, 36) 85%, rgb(236, 29, 36) 100%);
   color: #FFFFFF;
   text-shadow: 1px 1px 2px #151515, 1.25px 1.25px 2.25px #151515;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -468,6 +515,7 @@ details .boxFilters label {
   padding: 15px;
   border-radius: 15px;
   gap: 20px;
+  position: relative;
 }
 .BoxCards .boxCardFav {
   width: 100%;
@@ -496,7 +544,6 @@ details .boxFilters label {
 .BoxCards .boxCardFav a .back {
   position: absolute;
   backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
   width: 100%;
   height: 100%;
   border-radius: 15px;
@@ -542,11 +589,8 @@ details .boxFilters label {
   width: 90%;
 }
 .BoxCards .boxCardFav a .front .boxHearthMore .more {
-  min-width: 50px;
+  min-width: 40px;
   border-radius: 15px !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 5px;
   display: flex;
   justify-content: center;
@@ -558,10 +602,11 @@ details .boxFilters label {
   background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(32, 32, 32) 15%, rgb(52, 32, 32) 25%, rgb(216, 29, 36) 85%, rgb(236, 29, 36) 100%);
   color: #FFFFFF;
   text-shadow: 1px 1px 2px #151515, 1.25px 1.25px 2.25px #151515;
+  cursor: pointer;
 }
 .BoxCards .boxCardFav a .front .boxHearthMore .more .dot {
-  width: 7px;
-  height: 7px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background-color: white;
 }
@@ -577,6 +622,7 @@ details .boxFilters label {
   background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(32, 32, 32) 15%, rgb(52, 32, 32) 25%, rgb(216, 29, 36) 85%, rgb(236, 29, 36) 100%);
   color: #FFFFFF;
   text-shadow: 1px 1px 2px #151515, 1.25px 1.25px 2.25px #151515;
+  cursor: pointer;
 }
 
 .flipCardIn {
@@ -618,23 +664,12 @@ details .boxFilters label {
 main {
   background-color: #202020;
   color: #FFFFFF;
+  position: relative;
 }
 main .wrapper {
   background-image: url("../images/marvel-background-web.webp");
   background-size: cover;
   border-radius: 15px;
-}
-main .wrapper .btnChevronUp {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #202020;
-  background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(32, 32, 32) 15%, rgb(52, 32, 32) 25%, rgb(216, 29, 36) 85%, rgb(236, 29, 36) 100%);
-  color: #FFFFFF;
-  text-shadow: 1px 1px 2px #151515, 1.25px 1.25px 2.25px #151515;
 }
 
 .boxComics {

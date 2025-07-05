@@ -5,7 +5,6 @@ const Input = ({
   type,
   placeholder,
   setState,
-  autocomplete,
   classLabel,
 }) => {
   return (
@@ -16,7 +15,7 @@ const Input = ({
         type={type}
         name={inputId}
         placeholder={placeholder}
-        autoComplete={autocomplete}
+        autoComplete="on"
         onChange={(e) => {
           setState(e.target.value);
         }}

@@ -63,4 +63,5 @@
   @include backLinear;
   color: $fontTxt;
   text-shadow: 1px 1px 2px $bannerBlack, 1.25px 1.25px 2.25px $bannerBlack;
+  cursor: pointer;
 }

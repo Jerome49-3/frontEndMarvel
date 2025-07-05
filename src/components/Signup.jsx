@@ -6,8 +6,10 @@ import Image from "./Image";
 import SmallLogo from "/imgs/marvelous.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Cookies from "js-cookie";
+import { useStateFunc } from "../assets/lib/context/useStateFunc";
 
-const SignUp = ({ show, setShow, icon1, icon2, token, setToken }) => {
+const SignUp = () => {
+  const { show, setShow, faEye, faEyeSlash, setToken } = useStateFunc();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -90,12 +92,12 @@ const SignUp = ({ show, setShow, icon1, icon2, token, setToken }) => {
             />
             <div className="boxIcons">
               <FontAwesomeIcon
-                icon={icon1}
+                faEye={faEye}
                 onClick={handleType}
                 className={type !== "password" ? "hide" : null}
               />
               <FontAwesomeIcon
-                icon={icon2}
+                faEyeSlash={faEyeSlash}
                 onClick={handleType}
                 className={type !== "text" ? "hide" : null}
               />

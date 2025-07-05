@@ -2,12 +2,16 @@
 /* eslint-disable no-undef */
 import React, { useRef, useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useStateFunc } from "../assets/lib/context/useStateFunc";
 
-const Hearths = ({ faStar, farStar, fav, setFav, card }) => {
+const Hearths = ({ card }) => {
   // console.log("fav inside Hearths:", fav);
   // console.log("card inside Hearths:", card);
   const [isFavorite, setIsFavorite] = useState();
   const heartsRefs = useRef({});
+
+  const { faStar, farStar, fav, setFav } = useStateFunc();
+
   useEffect(() => {
     if (fav && Array.isArray(fav)) {
       // console.log("fav inside useEffect to Hearths:", fav);

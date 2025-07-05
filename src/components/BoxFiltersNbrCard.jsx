@@ -1,6 +1,9 @@
+import { useStateFunc } from "../assets/lib/context/useStateFunc";
 import Input from "./Input";
 
-const BoxFiltersNbrCard = ({ limit, setLimit, skip, setSkip }) => {
+const BoxFiltersNbrCard = () => {
+  const { limit, setLimit, skip, setSkip } = useStateFunc();
+
   return (
     <details>
       <summary>filtres</summary>

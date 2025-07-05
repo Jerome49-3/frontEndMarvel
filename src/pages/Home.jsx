@@ -5,52 +5,30 @@ import axios from "axios";
 //components
 import Loading from "../components/Loading";
 import BoxCards from "../components/BoxCards";
-import Button from "../components/Button";
 //lib
 import infoDiv from "../assets/lib/infoDiv";
 import addRemoveListener from "../assets/lib/addRemoveListener";
 import setDimensions from "../assets/lib/setDimensions";
 
-const Home = ({
-  name,
-  limit,
-  skip,
-  fav,
-  setFav,
-  setSkip,
-  page,
-  setPage,
-  // setShow,
-  faStar,
-  farStar,
-  count,
-  setCount,
-  faChevronUp,
-}) => {
+//context
+import { useStateFunc } from "../assets/lib/context/useStateFunc";
+
+const Home = () => {
+  const {
+    name,
+    limit,
+    skip,
+    count,
+    setCount,
+    setScrollY,
+    setDimDiv,
+    setDimWindows,
+  } = useStateFunc();
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  const [dimDiv, setDimDiv] = useState();
-  const [dimWindows, setDimWindows] = useState();
-  const formatImg =
-    "standard_amazing" ||
-    "standard_fantastic" ||
-    "standard_xlarge" ||
-    "standard_large" ||
-    "mg";
-  const refDiv = useRef();
-  const handleMoveToTop = () => {
-    scrollTo(24.80000114440918, 104.80000305175781);
-  };
-  //****************************************** //
-  //********** listen event resize *********** //
-  //****************************************** //
-  useEffect(() => {
-    return addRemoveListener("resize", () => setDimensions(setDimWindows));
-  }, [location.pathname]);
+  const anchorUp = useRef();
+  const anchorDown = useRef();
 
-  useEffect(() => {
-    return addRemoveListener("load", () => setDimensions(setDimWindows));
-  }, [location.pathname]);
   // console.log('fav0', fav);
   //initialiser un useEffect pour effectuer une requete au chargement de la page
   useLayoutEffect(() => {
@@ -90,42 +68,32 @@ const Home = ({
           //actualiser la valeur du loading à false
           setIsLoading(false);
         }
-        if (isLoading !== true) {
-          infoDiv(refDiv, setDimDiv);
-        }
       } catch (error) {
-        console.log("error.response:", error.response);
+        console.log("error on Home:", error);
+        console.log("error.response on Home:", error?.response);
       }
     };
     fetchData();
   }, [name, limit, skip]);
-  console.log("dimDiv:", dimDiv);
+
+  useLayoutEffect(() => {
+    if (
+      isLoading !== true &&
+      anchorUp.current !== undefined &&
+      anchorDown.current !== undefined
+    ) {
+      infoDiv(anchorUp, anchorDown, setDimDiv);
+    }
+  }, [isLoading]);
 
   return isLoading ? (
     <Loading />
   ) : (
     <>
-      <section className="wrapper" id="top" ref={refDiv}>
-        <BoxCards
-          fav={fav}
-          data={data}
-          formatImg={formatImg}
-          setFav={setFav}
-          faStar={faStar}
-          farStar={farStar}
-          page={page}
-          setPage={setPage}
-          setSkip={setSkip}
-          limit={limit}
-          skip={skip}
-          count={count}
-        />
-        <Button
-          icon={faChevronUp}
-          handleClick={handleMoveToTop}
-          classButton="btnChevronUp"
-        />
+      <section className="wrapper" id="top" ref={anchorUp}>
+        <BoxCards data={data} />
       </section>
+      <div id="bottom" ref={anchorDown}></div>
     </>
   );
 };

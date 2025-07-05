@@ -1,58 +1,25 @@
-import { useLocation } from "react-router-dom";
-
-import Navigation from "./Navigation";
+//components
+import NavigationPage from "./NavigationPage";
 import Card from "./Card";
+import { useStateFunc } from "../assets/lib/context/useStateFunc";
 
-const BoxCard = ({
-  fav,
-  data,
-  setFav,
-  faStar,
-  farStar,
-  page,
-  setPage,
-  setSkip,
-  limit,
-  skip,
-  count,
-}) => {
-  const location = useLocation();
-  const formatImg =
-    "standard_amazing" ||
-    "standard_fantastic" ||
-    "standard_xlarge" ||
-    "standard_large" ||
-    "mg";
+const BoxCard = ({ data }) => {
+  const { fav, path } = useStateFunc();
 
   return (
-    <div className="BoxCards">
-      <Navigation
-        page={page}
-        setPage={setPage}
-        setSkip={setSkip}
-        limit={limit}
-        skip={skip}
-        count={count}
-      />
-      {(location.pathname === "/favorites" ? fav : data)?.map(
-        (card, key = card._id) => {
+    <>
+      <div className="BoxCards">
+        <NavigationPage />
+        {(path === "/favorites" ? fav : data)?.map((card, key = card._id) => {
           const characterId = card._id;
           return (
             <div className="boxCardFav" key={key}>
-              <Card
-                fav={fav}
-                setFav={setFav}
-                faStar={faStar}
-                farStar={farStar}
-                characterId={characterId}
-                formatImg={formatImg}
-                card={card}
-              />
+              <Card characterId={characterId} card={card} />
             </div>
           );
-        }
-      )}
-    </div>
+        })}
+      </div>
+    </>
   );
 };
 

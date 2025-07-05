@@ -1,16 +1,10 @@
 import { useState } from "react";
 import Hearths from "./Hearths";
 import { Link } from "react-router-dom";
+import { useStateFunc } from "../assets/lib/context/useStateFunc";
 
-const Card = ({
-  fav,
-  setFav,
-  faStar,
-  farStar,
-  characterId,
-  formatImg,
-  card,
-}) => {
+const Card = ({ characterId, card }) => {
+  const { fav, setFav, faStar, farStar, formatImg } = useStateFunc();
   const [classAnim, setClassAnim] = useState("");
   return (
     <Link

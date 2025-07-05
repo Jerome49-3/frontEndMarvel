@@ -7,6 +7,7 @@ body {
 
 #root {
   @include flexColCenter;
+  width: 100%;
 }
 
 .wrapper {
@@ -90,6 +91,39 @@ details input {
 
 .hide {
   display: none;
+}
+
+.btnChevronDown,
+.btnChevronUp {
+  @include btn;
+  width: 40px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+  touch-action: manipulation;
+  flex-basis: auto;
+  flex-shrink: 0;
+  list-style: none;
+  margin: 0px;
+  min-height: 0px;
+  min-width: 0px;
+  padding: 0px;
+  text-decoration: none;
+
+  .svg-inline--fa {
+    height: 25px;
+  }
+}
+
+.btnChevronDown {
+  top: 5%;
+  position: sticky;
+  z-index: 10;
+}
+
+.btnChevronUp {
+  bottom: 1%;
+  position: sticky;
+  z-index: 10;
 }
 
 // BREAKPOINTS

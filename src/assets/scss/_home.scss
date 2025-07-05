@@ -1,14 +1,11 @@
 main {
   background-color: $darkMode;
   color: $fontTxt;
+  position: relative;
 
   .wrapper {
     background-image: url('../images/marvel-background-web.webp');
     background-size: cover;
     border-radius: 15px;
-
-    .btnChevronUp {
-      @include btn;
-    }
   }
 }

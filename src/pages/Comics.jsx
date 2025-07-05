@@ -5,11 +5,15 @@ import { Link } from "react-router-dom";
 //components
 import Loading from "../components/Loading";
 
+//context
+import { useStateFunc } from "../assets/lib/context/useStateFunc";
+
 const Comics = ({ name, limit, skip }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    const { name, limit, skip, fav, setFav } = useStateFunc();
     const fetchData = async () => {
       //essayer une requete get
       try {

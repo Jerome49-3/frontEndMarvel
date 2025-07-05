@@ -1,11 +1,10 @@
-import { useLocation } from "react-router-dom";
 import Button from "./Button";
-import handleBackPage from "../assets/lib/handleBackPage";
-import handleAddPage from "../assets/lib/handleAddPage";
+import handleBackPage from "../assets/lib/moveToPage/handleBackPage.js";
+import handleAddPage from "../assets/lib/moveToPage/handleAddPage";
+import { useStateFunc } from "../assets/lib/context/useStateFunc";
 
-const Navigation = ({ page, setPage, setSkip, limit, skip, count }) => {
-  const location = useLocation();
-  const path = location.pathname;
+const NavigationPage = () => {
+  const { page, setPage, setSkip, limit, skip, count, path } = useStateFunc();
   return (
     <div className="boxNavigation">
       {page > 0 ? (
@@ -23,7 +22,9 @@ const Navigation = ({ page, setPage, setSkip, limit, skip, count }) => {
           <p>page: {page}</p>
         </div>
       ) : (
-        <div>{path}</div>
+        <div className="boxSeePage">
+          <div>{path}</div>
+        </div>
       )}
       {skip < count ? (
         <Button
@@ -38,4 +39,4 @@ const Navigation = ({ page, setPage, setSkip, limit, skip, count }) => {
   );
 };
 
-export default Navigation;
+export default NavigationPage;
