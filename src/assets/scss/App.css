@@ -12,6 +12,11 @@ body {
   flex-direction: column;
   width: 100%;
 }
+@media all and (min-width: 768px) {
+  #root {
+    justify-content: space-between;
+  }
+}
 
 .wrapper {
   max-width: 300px;
@@ -140,6 +145,21 @@ details input {
 .btnChevronDown .svg-inline--fa,
 .btnChevronUp .svg-inline--fa {
   height: 25px;
+}
+@media all and (max-width: 576px) {
+  .btnChevronDown,
+  .btnChevronUp {
+    left: 10%;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 2.5px;
+  }
+  .btnChevronDown .svg-inline--fa,
+  .btnChevronUp .svg-inline--fa {
+    height: 18px;
+  }
 }
 
 .btnChevronDown {
@@ -666,47 +686,98 @@ main {
   color: #FFFFFF;
   position: relative;
 }
+@media all and (max-width: 576px) {
+  main {
+    width: 90%;
+  }
+}
 main .wrapper {
   background-image: url("../images/marvel-background-web.webp");
   background-size: cover;
   border-radius: 15px;
 }
 
-.boxComics {
+.boxComics .wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 80px;
   padding: 20px;
+  border: 2px solid #E62429;
+  border-radius: 15px;
+  transition: all 2s linear;
 }
-.boxComics a {
+.boxComics .wrapper a:hover .boxTitleDesc {
+  margin-top: 0;
+}
+.boxComics .wrapper a {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 25%;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 10px;
-  gap: 20px;
+  overflow: hidden;
+  position: relative;
+  width: 350px;
+  height: 300px;
   border: 2px solid #E62429;
   border-radius: 15px;
 }
-.boxComics a img {
-  width: 100%;
+.boxComics .wrapper a .boxTitleDesc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #202020;
+  background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(32, 32, 32) 15%, rgb(52, 32, 32) 25%, rgb(216, 29, 36) 85%, rgb(236, 29, 36) 100%);
+  width: 350px;
+  height: 300px;
+  max-height: 300px;
+  margin-top: -600px;
+  position: absolute;
+  border-radius: 15px;
+  z-index: 20;
+  gap: 10px;
+}
+.boxComics .wrapper a .boxTitleDesc .title,
+.boxComics .wrapper a .boxTitleDesc .desc {
+  width: 85%;
+  text-align: justify;
+}
+.boxComics .wrapper a .boxTitleDesc .title {
+  padding-top: 10px;
+}
+.boxComics .wrapper a .boxTitleDesc .desc {
+  padding-bottom: 10px;
+  -webkit-line-clamp: 15;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-clamp: 15;
+  max-height: 300px;
+}
+.boxComics .wrapper a img {
+  width: 350px;
+  height: 300px;
   -o-object-fit: cover;
   object-fit: cover;
   border-radius: 15px;
+  z-index: 10;
 }
-
-.linkComicsChar {
+.boxComics .linkComicsChar {
   border: 2px solid #E62429;
   padding: 5px 10px 5px 10px;
   box-shadow: 0.25px 0.25px 1px #151515, 1px 1px 1.25px #FFFFFF, 0.75px 0.75px 1.5px #151515;
   border-radius: 15px;
 }
 
+@media all and (min-width: 768px) {
+  .boxComics a {
+    width: 25% !important;
+  }
+}
 .boxComicsChar {
   border: 2px solid red;
   gap: 20px;

@@ -7,23 +7,12 @@ import Loading from "../components/Loading";
 import BoxCards from "../components/BoxCards";
 //lib
 import infoDiv from "../assets/lib/infoDiv";
-import addRemoveListener from "../assets/lib/addRemoveListener";
-import setDimensions from "../assets/lib/setDimensions";
 
 //context
 import { useStateFunc } from "../assets/lib/context/useStateFunc";
 
 const Home = () => {
-  const {
-    name,
-    limit,
-    skip,
-    count,
-    setCount,
-    setScrollY,
-    setDimDiv,
-    setDimWindows,
-  } = useStateFunc();
+  const { name, limit, skip, setCount, setDimDiv } = useStateFunc();
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const anchorUp = useRef();
@@ -64,7 +53,7 @@ const Home = () => {
           setData(filterImg);
           console.log("data2:", data);
           setCount(counter);
-          console.log("count:", count);
+          // console.log("count:", count);
           //actualiser la valeur du loading à false
           setIsLoading(false);
         }
@@ -89,12 +78,12 @@ const Home = () => {
   return isLoading ? (
     <Loading />
   ) : (
-    <>
+    <div className="boxHome">
       <section className="wrapper" id="top" ref={anchorUp}>
         <BoxCards data={data} />
       </section>
       <div id="bottom" ref={anchorDown}></div>
-    </>
+    </div>
   );
 };
 

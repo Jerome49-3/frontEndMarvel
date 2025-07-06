@@ -1,8 +1,19 @@
+import { useState } from "react";
+
 const Image = (props) => {
   const { src, alt, classImg } = props;
+  const imgNotFound = "/imgs/imgNotFound.png";
+  const [onError, setOnError] = useState(false);
   return (
     <>
-      <img src={src} alt={alt} className={classImg} />
+      <img
+        src={!onError ? src : `${imgNotFound}`}
+        alt={alt}
+        className={classImg}
+        onError={() => {
+          setOnError(true);
+        }}
+      />
     </>
   );
 };

@@ -8,6 +8,10 @@ body {
 #root {
   @include flexColCenter;
   width: 100%;
+
+  @media all and (min-width : 768px) {
+    justify-content: space-between;
+  }
 }
 
 .wrapper {
@@ -111,6 +115,17 @@ details input {
 
   .svg-inline--fa {
     height: 25px;
+  }
+
+  @media all and (max-width : 576px) {
+    left: 10%;
+    width: fit-content;
+    height: fit-content;
+    padding: 2.5px;
+
+    .svg-inline--fa {
+      height: 18px;
+    }
   }
 }
 

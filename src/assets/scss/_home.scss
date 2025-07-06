@@ -3,9 +3,14 @@ main {
   color: $fontTxt;
   position: relative;
 
+  @media all and (max-width : 576px) {
+    width: 90%;
+  }
+
   .wrapper {
     background-image: url('../images/marvel-background-web.webp');
     background-size: cover;
     border-radius: 15px;
+    // margin-bottom: -35px;
   }
 }

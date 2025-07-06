@@ -65,3 +65,19 @@
   text-shadow: 1px 1px 2px $bannerBlack, 1.25px 1.25px 2.25px $bannerBlack;
   cursor: pointer;
 }
+
+@mixin ellipsisOneLine {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin ellipsisMultiLine {
+  -webkit-line-clamp: 15;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-clamp: 15;
+  max-height: 300px;
+}
