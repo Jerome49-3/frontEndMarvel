@@ -2,6 +2,7 @@ import { useState } from "react";
 import Hearths from "./Hearths";
 import { Link } from "react-router-dom";
 import { useStateFunc } from "../assets/lib/context/useStateFunc";
+import Image from "./Image";
 
 const Card = ({ characterId, card }) => {
   const { fav, setFav, faStar, farStar, formatImg } = useStateFunc();
@@ -21,7 +22,7 @@ const Card = ({ characterId, card }) => {
         </div>
       </div>
       <div className="front">
-        <img
+        <Image
           src={`${card.thumbnail.path}/${formatImg}.${card.thumbnail.extension}`}
           alt="characters"
         />
