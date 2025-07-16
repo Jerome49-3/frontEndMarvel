@@ -7,8 +7,8 @@
 
   form {
     position: absolute;
-    top: 60vh;
-    left: 50vw;
+    top: 55%;
+    left: 50%;
     transform: translate(-50%, -50%);
     @include flexColCenter;
     gap: 10px;
@@ -24,5 +24,20 @@
     & label:last-child {
       width: 100%;
     }
+  }
+}
+
+// BREAKPOINTS
+// @media all and (min-width : 576px) {}
+
+// @media all and (min-width : 768px) {}
+
+// @media all and (min-width : 992px) {}
+
+// @media all and (min-width : 1200px) {}
+
+@media all and (min-width : 1400px) {
+  .boxLogin {
+    height: 75vh;
   }
 }

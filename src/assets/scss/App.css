@@ -458,8 +458,8 @@ details .boxFilters label {
 }
 .boxLogin form {
   position: absolute;
-  top: 60vh;
-  left: 50vw;
+  top: 55%;
+  left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
@@ -487,6 +487,11 @@ details .boxFilters label {
   width: 100%;
 }
 
+@media all and (min-width: 1400px) {
+  .boxLogin {
+    height: 75vh;
+  }
+}
 .boxNavigation {
   display: flex;
   justify-content: center;
@@ -685,6 +690,7 @@ main {
   background-color: #202020;
   color: #FFFFFF;
   position: relative;
+  width: 100%;
 }
 @media all and (max-width: 576px) {
   main {
