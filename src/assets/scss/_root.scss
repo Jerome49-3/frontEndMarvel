@@ -97,50 +97,6 @@ details input {
   display: none;
 }
 
-.btnChevronDown,
-.btnChevronUp {
-  @include btn;
-  width: 40px;
-  height: 40px;
-  transform: translate(-50%, -50%);
-  touch-action: manipulation;
-  flex-basis: auto;
-  flex-shrink: 0;
-  list-style: none;
-  margin: 0px;
-  min-height: 0px;
-  min-width: 0px;
-  padding: 0px;
-  text-decoration: none;
-
-  .svg-inline--fa {
-    height: 25px;
-  }
-
-  @media all and (max-width : 576px) {
-    left: 10%;
-    width: fit-content;
-    height: fit-content;
-    padding: 2.5px;
-
-    .svg-inline--fa {
-      height: 18px;
-    }
-  }
-}
-
-.btnChevronDown {
-  top: 5%;
-  position: sticky;
-  z-index: 10;
-}
-
-.btnChevronUp {
-  bottom: 1%;
-  position: sticky;
-  z-index: 10;
-}
-
 // BREAKPOINTS
 // @media all and (min-width : 576px) {}
 

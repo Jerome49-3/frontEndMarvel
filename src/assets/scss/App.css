@@ -116,64 +116,6 @@ details input {
   display: none;
 }
 
-.btnChevronDown,
-.btnChevronUp {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #202020;
-  background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(32, 32, 32) 15%, rgb(52, 32, 32) 25%, rgb(216, 29, 36) 85%, rgb(236, 29, 36) 100%);
-  color: #FFFFFF;
-  text-shadow: 1px 1px 2px #151515, 1.25px 1.25px 2.25px #151515;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  transform: translate(-50%, -50%);
-  touch-action: manipulation;
-  flex-basis: auto;
-  flex-shrink: 0;
-  list-style: none;
-  margin: 0px;
-  min-height: 0px;
-  min-width: 0px;
-  padding: 0px;
-  text-decoration: none;
-}
-.btnChevronDown .svg-inline--fa,
-.btnChevronUp .svg-inline--fa {
-  height: 25px;
-}
-@media all and (max-width: 576px) {
-  .btnChevronDown,
-  .btnChevronUp {
-    left: 10%;
-    width: -moz-fit-content;
-    width: fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    padding: 2.5px;
-  }
-  .btnChevronDown .svg-inline--fa,
-  .btnChevronUp .svg-inline--fa {
-    height: 18px;
-  }
-}
-
-.btnChevronDown {
-  top: 5%;
-  position: sticky;
-  z-index: 10;
-}
-
-.btnChevronUp {
-  bottom: 1%;
-  position: sticky;
-  z-index: 10;
-}
-
 header {
   display: flex;
   justify-content: center;
@@ -746,17 +688,76 @@ main {
   position: relative;
   width: 100%;
 }
-@media all and (max-width: 576px) {
-  main {
-    width: 90%;
-  }
-}
-main .wrapper {
+main * .wrapper {
   background-image: url("../images/marvel-background-web.webp");
   background-size: cover;
   border-radius: 15px;
 }
+main .btnChevronDown,
+main .btnChevronUp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #202020;
+  background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(32, 32, 32) 15%, rgb(52, 32, 32) 25%, rgb(216, 29, 36) 85%, rgb(236, 29, 36) 100%);
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px #151515, 1.25px 1.25px 2.25px #151515;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+  touch-action: manipulation;
+  flex-basis: auto;
+  flex-shrink: 0;
+  list-style: none;
+  margin: 0px;
+  min-height: 0px;
+  min-width: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+main .btnChevronDown .svg-inline--fa,
+main .btnChevronUp .svg-inline--fa {
+  height: 25px;
+}
+main .btnChevronDown {
+  top: 5%;
+  position: sticky;
+  z-index: 10;
+}
+main .btnChevronUp {
+  bottom: 1%;
+  position: sticky;
+  z-index: 10;
+}
 
+@media all and (min-width: 576px) {
+  main {
+    width: 90%;
+  }
+  main .btnChevronDown,
+  main .btnChevronUp {
+    left: 10%;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 2.5px;
+  }
+  main .btnChevronDown .svg-inline--fa,
+  main .btnChevronUp .svg-inline--fa {
+    height: 18px;
+  }
+}
+@media all and (min-width: 1400px) {
+  main .btnChevronDown,
+  main .btnChevronUp {
+    left: 7% !important;
+  }
+}
 .boxComics .wrapper {
   display: flex;
   justify-content: center;

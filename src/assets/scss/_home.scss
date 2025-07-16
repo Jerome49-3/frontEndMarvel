@@ -4,14 +4,79 @@ main {
   position: relative;
   width: 100%;
 
-  @media all and (max-width : 576px) {
-    width: 90%;
-  }
-
-  .wrapper {
+  * .wrapper {
     background-image: url('../images/marvel-background-web.webp');
     background-size: cover;
     border-radius: 15px;
     // margin-bottom: -35px;
+  }
+
+  .btnChevronDown,
+  .btnChevronUp {
+    @include btn;
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%, -50%);
+    touch-action: manipulation;
+    flex-basis: auto;
+    flex-shrink: 0;
+    list-style: none;
+    margin: 0px;
+    min-height: 0px;
+    min-width: 0px;
+    padding: 0px;
+    text-decoration: none;
+
+    .svg-inline--fa {
+      height: 25px;
+    }
+  }
+
+  .btnChevronDown {
+    top: 5%;
+    position: sticky;
+    z-index: 10;
+  }
+
+  .btnChevronUp {
+    bottom: 1%;
+    position: sticky;
+    z-index: 10;
+  }
+}
+
+// BREAKPOINTS
+@media all and (min-width : 576px) {
+  main {
+    width: 90%;
+
+    .btnChevronDown,
+    .btnChevronUp {
+      left: 10%;
+      width: fit-content;
+      height: fit-content;
+      padding: 2.5px;
+
+      .svg-inline--fa {
+        height: 18px;
+      }
+    }
+  }
+
+}
+
+// @media all and (min-width : 768px) {}
+
+// @media all and (min-width : 992px) {}
+
+// @media all and (min-width : 1200px) {}
+
+@media all and (min-width : 1400px) {
+  main {
+
+    .btnChevronDown,
+    .btnChevronUp {
+      left: 7% !important;
+    }
   }
 }
