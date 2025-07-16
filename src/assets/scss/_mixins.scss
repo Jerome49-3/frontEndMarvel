@@ -9,6 +9,12 @@
   align-items: center;
 }
 
+@mixin boxShadow {
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.7), 0.25px 0.25px 1px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.7), 0.25px 0.25px 1px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.7), 0.25px 0.25px 1px rgba(0, 0, 0, 0.7);
+}
+
 @mixin flexStart {
   display: flex;
   justify-content: flex-start;

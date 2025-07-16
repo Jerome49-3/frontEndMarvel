@@ -59,17 +59,38 @@
   box-shadow: inset 0px 0px 4px #000000;
 }
 
-.boxModalContent form {
+.boxModalContent .boxForm {
   gap: 5px;
   padding: 1.5rem 2rem 2rem 2rem;
   @include flexColStart;
 
   & label {
     width: 100%;
+    display: flex;
 
     & input#email,
     & input#username {
       width: 100%;
+    }
+  }
+
+  .boxPsswd {
+    @include boxShadow;
+    border-radius: 15px;
+
+    // padding: 0px 5px 0px 5px;
+    .boxIcons {
+      width: 20%;
+      @include flexCenter;
+    }
+
+    & label {
+      width: 80%;
+
+      & input#password {
+        box-shadow: none;
+        border: none;
+      }
     }
   }
 
@@ -82,4 +103,19 @@
 
 .hide {
   display: none;
+}
+
+// BREAKPOINTS
+// @media all and (min-width : 576px) {}
+
+// @media all and (min-width : 768px) {}
+
+// @media all and (min-width : 992px) {}
+
+// @media all and (min-width : 1200px) {}
+
+@media all and (min-width : 1400px) {
+  .boxModalContent .boxForm {
+    width: 300px;
+  }
 }

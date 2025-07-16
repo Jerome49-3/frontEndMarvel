@@ -41,7 +41,7 @@ function App() {
             <Route path="/login" element={<Login />} />
           </Route>
         </Routes>
-        {show && <Signup />}
+        {show && <Signup show={show} setShow={setShow} />}
       </StateProvider>
     </Router>
   );

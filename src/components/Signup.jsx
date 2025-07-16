@@ -8,8 +8,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Cookies from "js-cookie";
 import { useStateFunc } from "../assets/lib/context/useStateFunc";
 
-const SignUp = () => {
-  const { show, setShow, faEye, faEyeSlash, setToken } = useStateFunc();
+const SignUp = ({ show, setShow }) => {
+  const { faEye, faEyeSlash, setToken } = useStateFunc();
+  console.log("faEye:", faEye, "faEyeSlash:", faEyeSlash);
+
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,7 +23,6 @@ const SignUp = () => {
     setType(type === "password" ? "text" : "password");
   };
   const handleSubmit = async (e) => {
-    // console.log('e.target.file', e.target.file)
     e.preventDefault();
     setErrorMessage("");
     try {
@@ -92,12 +93,12 @@ const SignUp = () => {
             />
             <div className="boxIcons">
               <FontAwesomeIcon
-                faEye={faEye}
+                icon={faEye}
                 onClick={handleType}
                 className={type !== "password" ? "hide" : null}
               />
               <FontAwesomeIcon
-                faEyeSlash={faEyeSlash}
+                icon={faEyeSlash}
                 onClick={handleType}
                 className={type !== "text" ? "hide" : null}
               />
