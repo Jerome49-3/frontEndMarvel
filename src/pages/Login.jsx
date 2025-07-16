@@ -4,7 +4,8 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useStateFunc } from "../assets/lib/context/useStateFunc";
-
+import SmallLogo from "/imgs/marvelous.svg";
+import Image from "../components/Image";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -39,6 +40,16 @@ const Login = () => {
   return (
     <div className="boxLogin">
       <form onSubmit={handleSubmit}>
+        <div className="btnCloseLogin">
+          <Image src={SmallLogo} alt="logo Marvel" />
+          <button
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            X
+          </button>
+        </div>
         <Input
           id="email"
           type="email"

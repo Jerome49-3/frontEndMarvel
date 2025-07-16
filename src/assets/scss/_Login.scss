@@ -12,6 +12,33 @@
     transform: translate(-50%, -50%);
     @include flexColCenter;
     gap: 10px;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+
+    .btnCloseLogin {
+      @include flexBetween;
+      width: 100%;
+      margin-bottom: 10px;
+
+      & img,
+      & button {
+        height: 50px;
+        padding: 5px;
+        border-radius: 7.5px;
+        box-shadow: 0px 0px 4px #000000;
+      }
+
+      & img {
+        width: 100px;
+      }
+
+      & button {
+        width: 50px;
+        @include flexCenter;
+      }
+
+    }
 
     input[type="submit"] {
       @include btn;
@@ -39,5 +66,10 @@
 @media all and (min-width : 1400px) {
   .boxLogin {
     height: 75vh;
+
+    & form {
+      width: 20%;
+      gap: 20px;
+    }
   }
 }
