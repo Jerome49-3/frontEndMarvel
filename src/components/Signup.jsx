@@ -43,7 +43,7 @@ const SignUp = ({ show, setShow }) => {
         // console.log('token:', token);
         setShow(false);
         // console.log('show:', show);
-        navigate("/login");
+        navigate("/");
       }
     } catch (error) {
       console.log("error", error.response);

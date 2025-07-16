@@ -26,14 +26,14 @@ const Card = ({ characterId, card }) => {
           src={`${card.thumbnail.path}/${formatImg}.${card.thumbnail.extension}`}
           alt="characters"
         />
-        <div
-          className="boxHearthMore"
-          onClick={(e) => {
-            e.preventDefault();
-            setClassAnim("flipCardIn");
-          }}
-        >
-          <button className="more">
+        <div className="boxHearthMore">
+          <button
+            className="more"
+            onClick={(e) => {
+              e.preventDefault();
+              setClassAnim("flipCardIn");
+            }}
+          >
             <div className="dot dot1"></div>
             <div className="dot dot2"></div>
             <div className="dot dot3"></div>
