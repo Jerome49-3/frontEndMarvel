@@ -26,6 +26,9 @@ main {
     min-width: 0px;
     padding: 0px;
     text-decoration: none;
+    left: 12.5%;
+    position: sticky;
+    z-index: 10;
 
     .svg-inline--fa {
       height: 25px;
@@ -34,14 +37,10 @@ main {
 
   .btnChevronDown {
     top: 5%;
-    position: sticky;
-    z-index: 10;
   }
 
   .btnChevronUp {
     bottom: 1%;
-    position: sticky;
-    z-index: 10;
   }
 }
 
