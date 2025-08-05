@@ -79,6 +79,11 @@
   .boxComics {
     & a {
       width: calc(100% /4) !important;
+
+      .boxTitleDesc {
+        padding: 10px;
+        width: 100%;
+      }
     }
   }
 }
