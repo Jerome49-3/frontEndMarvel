@@ -590,6 +590,33 @@ details .boxFilters label {
   justify-content: space-between;
   text-align: justify;
 }
+.BoxCards .boxCardFav a .front {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.BoxCards .boxCardFav a .front .cardTitle {
+  border: 2px solid #E62429;
+  border-radius: 10px;
+  padding: 5px 10px 5px 10px;
+  width: 92%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(4, 89, 155, 0.7);
+  height: 30px;
+  margin-top: -42px;
+}
+.BoxCards .boxCardFav a .front .cardTitle h3 {
+  width: 60%;
+  text-align: center;
+}
+.BoxCards .boxCardFav a .front .btnHearth {
+  position: absolute;
+  top: 92.5%;
+  left: 95%;
+  transform: translate(-50%, -50%);
+}
 .BoxCards .boxCardFav a .front img {
   width: 100%;
   height: 300px;
@@ -598,20 +625,9 @@ details .boxFilters label {
   border-radius: 15px;
   box-shadow: 0px 0px 1px purple, 0px 0px 1px purple, 0px 0px 1px purple, 0px 0px 10px purple;
 }
-.BoxCards .boxCardFav a .front .boxHearthMore {
-  height: 30px;
-  position: absolute;
-  top: 92.5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
-}
-.BoxCards .boxCardFav a .front .boxHearthMore .more {
+.BoxCards .boxCardFav a .front .more {
   min-width: 40px;
-  border-radius: 15px !important;
+  border-radius: 10px !important;
   gap: 5px;
   display: flex;
   justify-content: center;
@@ -624,8 +640,12 @@ details .boxFilters label {
   color: #FFFFFF;
   text-shadow: 1px 1px 2px #151515, 1.25px 1.25px 2.25px #151515;
   cursor: pointer;
+  position: absolute;
+  top: 92.5%;
+  left: 8%;
+  transform: translate(-50%, -50%);
 }
-.BoxCards .boxCardFav a .front .boxHearthMore .more .dot {
+.BoxCards .boxCardFav a .front .more .dot {
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -718,6 +738,9 @@ main .btnChevronUp {
   min-width: 0px;
   padding: 0px;
   text-decoration: none;
+  left: 12.5%;
+  position: sticky;
+  z-index: 10;
 }
 main .btnChevronDown .svg-inline--fa,
 main .btnChevronUp .svg-inline--fa {
@@ -725,13 +748,9 @@ main .btnChevronUp .svg-inline--fa {
 }
 main .btnChevronDown {
   top: 5%;
-  position: sticky;
-  z-index: 10;
 }
 main .btnChevronUp {
   bottom: 1%;
-  position: sticky;
-  z-index: 10;
 }
 
 @media all and (min-width: 576px) {
@@ -835,8 +854,12 @@ main .btnChevronUp {
 }
 
 @media all and (min-width: 768px) {
-  .boxComics a {
+  .boxComics .wrapper a {
     width: 25% !important;
+  }
+  .boxComics .wrapper a .boxTitleDesc {
+    padding: 10px;
+    width: 100% !important;
   }
 }
 .boxComicsChar {

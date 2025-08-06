@@ -4,7 +4,7 @@ const Image = (props) => {
   const { src, alt, classImg } = props;
   const imgNotFound = "/imgs/imgNotFound.png";
   const [onError, setOnError] = useState(false);
-  console.log("onError:", onError);
+  // console.log("onError:", onError);
 
   return (
     <>

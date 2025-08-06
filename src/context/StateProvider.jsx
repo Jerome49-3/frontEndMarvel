@@ -68,7 +68,7 @@ export const StateProvider = ({ children }) => {
     return [];
   });
   const [count, setCount] = useState(0);
-  console.log("token", token);
+  // console.log("token", token);
 
   //****************************************** //
   //************* format img ***************** //
@@ -110,7 +110,7 @@ export const StateProvider = ({ children }) => {
     return addRemoveListener("scroll", () => {
       // console.log("scroll", e);
       const scrollY = window.scrollY;
-      console.log("scrollY", scrollY);
+      // console.log("scrollY", scrollY);
       setScrollY(scrollY);
     });
   });

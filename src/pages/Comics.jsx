@@ -52,7 +52,7 @@ const Comics = () => {
           );
           const counter = response?.data?.dataMarv?.count;
           setCount(counter);
-          console.log("filterImg:", filterImg);
+          // console.log("filterImg:", filterImg);
           // console.log('data1:', data);
           setData(filterImg);
           //actualiser la valeur du loading à false

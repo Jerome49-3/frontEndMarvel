@@ -11,23 +11,23 @@ const NavigationScrollUp = () => {
     dimWindows,
     scrollY,
   } = useStateFunc();
-  console.log("%cdimWindows in NavigationScrollUp", "color: cyan", dimWindows);
-  console.log("%cdimDiv in NavigationScrollUp", "color: cyan", dimDiv);
-  console.log("%cscrollY in NavigationScrollUp", "color: cyan", scrollY);
-  console.log(
-    "%ctypeof scrollY in NavigationScrollUp",
-    "color: cyan",
-    typeof scrollY
-  );
+  // console.log("%cdimWindows in NavigationScrollUp", "color: cyan", dimWindows);
+  // console.log("%cdimDiv in NavigationScrollUp", "color: cyan", dimDiv);
+  // console.log("%cscrollY in NavigationScrollUp", "color: cyan", scrollY);
+  // console.log(
+  //   "%ctypeof scrollY in NavigationScrollUp",
+  //   "color: cyan",
+  //   typeof scrollY
+  // );
   const anchorUpY = dimDiv?.anchorDownY;
-  console.log("%canchorDownY in NavigationScrollUp", "color: cyan", anchorUpY);
+  // console.log("%canchorDownY in NavigationScrollUp", "color: cyan", anchorUpY);
   const anchorUpYHalf = anchorUpY / 1.15;
   const anchorUpTiers = anchorUpY / 3.5;
-  console.log(
-    "%canchorDownYHalf in NavigationScrollUp",
-    "color: cyan",
-    anchorUpYHalf
-  );
+  // console.log(
+  //   "%canchorDownYHalf in NavigationScrollUp",
+  //   "color: cyan",
+  //   anchorUpYHalf
+  // );
   return (
     <>
       {dimWindows?.width < 768 ? (
@@ -38,11 +38,11 @@ const NavigationScrollUp = () => {
                 icon={faChevronUp}
                 handleClick={(e) => {
                   e.preventDefault();
-                  console.log(
-                    "%cdimDiv in handleMoveToTop:",
-                    "color: magenta",
-                    dimDiv
-                  );
+                  // console.log(
+                  //   "%cdimDiv in handleMoveToTop:",
+                  //   "color: magenta",
+                  //   dimDiv
+                  // );
                   try {
                     scrollTo(dimDiv.anchorUpX, dimDiv.anchorUpY);
                   } catch (error) {

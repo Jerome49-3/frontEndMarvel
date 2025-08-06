@@ -21,11 +21,11 @@ const Comic = () => {
         const response = await axios.get(
           `${import.meta.env.VITE_REACT_APP_URL}/appmarv/comic/${comicId}`
         );
-        console.log("data /comic/:comicId :", response.data);
+        console.log("data /comic/:comicId :", response?.data);
         //si response
         if (response) {
           //mettre a jour la valeur du state data avec le retour de la response.data
-          setData(response.data);
+          setData(response?.data);
           //actualiser la valeur du loading à false
           setIsLoading(false);
         }

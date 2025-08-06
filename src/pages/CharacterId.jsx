@@ -19,14 +19,14 @@ const CharacterId = () => {
             import.meta.env.VITE_REACT_APP_URL
           }/appmarv/character/${characterId}`
         );
-        console.log("data /character/:characterId :", response.data);
+        console.log("data /character/:characterId :", response?.data);
         if (response) {
-          setData(response.data);
+          setData(response?.data);
           console.log("data on fetchData:", data);
           setIsLoading(false);
         }
       } catch (error) {
-        console.log("error.response:", error.response);
+        console.log("error.response:", error?.response);
       }
     };
     fetchData();

@@ -41,17 +41,17 @@ const Home = () => {
           const data = response?.data?.dataMarv?.data;
           console.log("data1:", data);
           const newData = [...data];
-          console.log("newData:", newData);
+          // console.log("newData:", newData);
           const filterImg = newData.filter(
             (card) =>
               !card.thumbnail.path.includes("image_not_available") &&
               !card.thumbnail.extension.includes("gif")
           );
-          console.log("filterImg:", filterImg);
+          // console.log("filterImg:", filterImg);
           const counter = response?.data?.dataMarv?.count;
           // console.log('data1:', data);
           setData(filterImg);
-          console.log("data2:", data);
+          console.log("data filtered:", data);
           setCount(counter);
           // console.log("count:", count);
           //actualiser la valeur du loading à false

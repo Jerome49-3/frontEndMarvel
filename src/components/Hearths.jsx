@@ -57,7 +57,7 @@ const Hearths = ({ card }) => {
 
   return (
     <React.Fragment>
-      <button onClick={(e) => handleToggle(e, card)}>
+      <button onClick={(e) => handleToggle(e, card)} className="btnHearth">
         <FontAwesomeIcon
           icon={faStar}
           className={isFavorite === true ? "show" : "hide"}

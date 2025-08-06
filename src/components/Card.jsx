@@ -17,7 +17,6 @@ const Card = ({ characterId, card }) => {
     >
       <div className="back">
         <div className="boxBackInner">
-          <h3>{card.name}</h3>
           {card.description ? <p>{card.description}</p> : <p>no information</p>}
         </div>
       </div>
@@ -26,26 +25,27 @@ const Card = ({ characterId, card }) => {
           src={`${card.thumbnail.path}/${formatImg}.${card.thumbnail.extension}`}
           alt="characters"
         />
-        <div className="boxHearthMore">
-          <button
-            className="more"
-            onClick={(e) => {
-              e.preventDefault();
-              setClassAnim("flipCardIn");
-            }}
-          >
-            <div className="dot dot1"></div>
-            <div className="dot dot2"></div>
-            <div className="dot dot3"></div>
-          </button>
-          <Hearths
-            fav={fav}
-            setFav={setFav}
-            faStar={faStar}
-            farStar={farStar}
-            card={card}
-          />
+        <div className="cardTitle">
+          <h3>{card.name}</h3>
         </div>
+        <button
+          className="more"
+          onClick={(e) => {
+            e.preventDefault();
+            setClassAnim("flipCardIn");
+          }}
+        >
+          <div className="dot dot1"></div>
+          <div className="dot dot2"></div>
+          <div className="dot dot3"></div>
+        </button>
+        <Hearths
+          fav={fav}
+          setFav={setFav}
+          faStar={faStar}
+          farStar={farStar}
+          card={card}
+        />
       </div>
     </Link>
   );

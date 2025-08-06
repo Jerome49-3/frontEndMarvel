@@ -10,7 +10,7 @@ import { useStateFunc } from "../assets/lib/context/useStateFunc";
 
 const SignUp = ({ show, setShow }) => {
   const { faEye, faEyeSlash, setToken } = useStateFunc();
-  console.log("faEye:", faEye, "faEyeSlash:", faEyeSlash);
+  // console.log("faEye:", faEye, "faEyeSlash:", faEyeSlash);
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");

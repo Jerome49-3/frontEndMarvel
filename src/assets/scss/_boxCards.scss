@@ -55,6 +55,32 @@
         }
 
         .front {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+
+          .cardTitle {
+            border: 2px solid $redMarv;
+            border-radius: 10px;
+            padding: 5px 10px 5px 10px;
+            width: 92%;
+            @include flexCenter;
+            background-color: rgb(4, 89, 155, .7);
+            height: 30px;
+            margin-top: -42px;
+
+            & h3 {
+              width: 60%;
+              text-align: center;
+            }
+          }
+
+          .btnHearth {
+            position: absolute;
+            top: 92.5%;
+            left: 95%;
+            transform: translate(-50%, -50%);
+          }
 
           // border: 2px solid lightsalmon;
           & img {
@@ -66,28 +92,21 @@
             box-shadow: 0px 0px 1px purple, 0px 0px 1px purple, 0px 0px 1px purple, 0px 0px 10px purple;
           }
 
-          .boxHearthMore {
-            // border: 2px solid red;
-            height: 30px;
+          .more {
+            min-width: 40px;
+            border-radius: 10px !important;
+            gap: 5px;
+            @include btn;
             position: absolute;
             top: 92.5%;
-            left: 50%;
+            left: 8%;
             transform: translate(-50%, -50%);
-            @include flexBetween;
-            width: 90%;
 
-            .more {
-              min-width: 40px;
-              border-radius: 15px !important;
-              gap: 5px;
-              @include btn;
-
-              .dot {
-                width: 5px;
-                height: 5px;
-                border-radius: 50%;
-                background-color: white;
-              }
+            .dot {
+              width: 5px;
+              height: 5px;
+              border-radius: 50%;
+              background-color: white;
             }
           }
         }

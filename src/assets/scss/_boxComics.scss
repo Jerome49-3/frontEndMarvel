@@ -77,12 +77,14 @@
 
 @media all and (min-width : 768px) {
   .boxComics {
-    & a {
-      width: calc(100% /4) !important;
+    .wrapper {
+      & a {
+        width: calc(100% /4) !important;
 
-      .boxTitleDesc {
-        padding: 10px;
-        width: 100%;
+        .boxTitleDesc {
+          padding: 10px;
+          width: 100% !important;
+        }
       }
     }
   }
