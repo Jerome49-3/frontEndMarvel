@@ -5,6 +5,8 @@ footer {
   @include flexCenter;
   background-color: #202020;
   border-top: 2px solid $redMarv;
+  position: fixed;
+  bottom: 0;
 
   ul {
     @include flexCenter;
