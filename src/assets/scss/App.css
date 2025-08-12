@@ -540,6 +540,7 @@ details .boxFilters label {
   border-radius: 10px;
   gap: 20px;
   position: relative;
+  background-image: url("../images/marvel-background-web.webp");
 }
 .BoxCards .boxCardFav {
   width: 100%;
@@ -712,9 +713,9 @@ main {
   width: 100%;
 }
 main * .wrapper {
-  background-image: url("../images/marvel-background-web.webp");
   background-size: cover;
   border-radius: 15px;
+  padding: 100px 0 50px 0;
 }
 main .btnChevronDown,
 main .btnChevronUp {

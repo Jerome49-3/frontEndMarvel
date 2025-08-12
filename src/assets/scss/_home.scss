@@ -5,10 +5,9 @@ main {
   width: 100%;
 
   * .wrapper {
-    background-image: url('../images/marvel-background-web.webp');
     background-size: cover;
     border-radius: 15px;
-    // margin-bottom: -35px;
+    padding: 100px 0 50px 0;
   }
 
   .btnChevronDown,
