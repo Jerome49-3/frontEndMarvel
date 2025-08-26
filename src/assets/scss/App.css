@@ -148,7 +148,8 @@ header .wrapper .boxInput {
   align-items: flex-start;
   flex-direction: column;
   gap: 10px;
-  height: 80px;
+  height: -moz-fit-content;
+  height: fit-content;
   width: 100%;
 }
 header .wrapper .boxInput label {
@@ -156,13 +157,6 @@ header .wrapper .boxInput label {
 }
 header .wrapper .boxInput label input {
   width: 95%;
-}
-header .wrapper .boxInput details {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  height: 30px;
 }
 header .wrapper nav {
   padding-right: 10px;
@@ -280,6 +274,9 @@ header .wrapper nav ul li:first-child {
   header .boxInput, header nav {
     width: 33.3333333333% !important;
   }
+  header .boxInput {
+    height: 80px;
+  }
   header .boxLogo {
     justify-content: flex-start !important;
   }
@@ -290,8 +287,12 @@ header .wrapper nav ul li:first-child {
 details {
   width: 100%;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  height: -moz-fit-content;
+  height: fit-content;
+  gap: 10px;
 }
 details .boxFilters {
   display: flex;
@@ -300,17 +301,22 @@ details .boxFilters {
   width: 100%;
   gap: 10px;
 }
-details .boxFilters .limitLabel > p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
+details .boxFilters .limitLabel {
+  width: 80%;
+}
+details .boxFilters .limitLabel p {
+  width: 60px !important;
   word-spacing: 5px;
+}
+details .boxFilters .limitLabel input {
+  width: 40px !important;
 }
 details .boxFilters .limitLabel,
 details .boxFilters .passLabel {
-  width: 50px;
   padding: 5px 10px 5px 10px;
+}
+details .boxFilters .passLabel input {
+  width: 20px !important;
 }
 details .boxFilters label {
   display: flex;
@@ -319,6 +325,15 @@ details .boxFilters label {
   gap: 20px;
 }
 
+@media all and (min-width: 1200px) {
+  details {
+    height: 30px;
+    flex-direction: row !important;
+  }
+  details summary {
+    width: 100%;
+  }
+}
 /* MODAL */
 .boxModal {
   width: 100vw;
