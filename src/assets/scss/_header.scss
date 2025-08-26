@@ -169,6 +169,24 @@ header {
 
 // @media all and (min-width : 992px) {}
 
-@media all and (min-width : 1200px) {}
+@media all and (min-width : 1200px) {
+  header {
 
-// @media all and (min-width : 1400px) {}
+    .boxLogo,
+    .boxInput,
+    & nav {
+      width: calc(100% / 3) !important;
+    }
+
+    .boxLogo {
+      justify-content: flex-start !important;
+    }
+
+    & nav {
+      padding: 20px 5px 20px 20px !important;
+    }
+  }
+
+}
+
+@media all and (min-width : 1400px) {}

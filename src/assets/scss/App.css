@@ -275,6 +275,18 @@ header .wrapper nav ul li:first-child {
     justify-content: flex-end;
   }
 }
+@media all and (min-width: 1200px) {
+  header .boxLogo,
+  header .boxInput, header nav {
+    width: 33.3333333333% !important;
+  }
+  header .boxLogo {
+    justify-content: flex-start !important;
+  }
+  header nav {
+    padding: 20px 5px 20px 20px !important;
+  }
+}
 details {
   width: 100%;
   display: flex;
