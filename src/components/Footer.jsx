@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer>
-      <ul>
+      <ul className="wrapper">
         <li>
           <p>
             Made at&nbsp;
